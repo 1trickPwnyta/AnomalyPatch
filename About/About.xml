@@ -10,8 +10,8 @@
 This mod makes a handful of small tweaks to the Anomaly DLC that are intended to make the game a bit more enjoyable without changing the gameplay too much.
 
 Full list of tweaks:
-- Selecting multiple bioferrite harvesters shows the total amount of bioferrite contained in all of them
-- Only checks home maps and any map where colonists are for threats when selecting music (to prevent horror combat/tension music from playing endlessly after running away from a pit gate battle)
+- Selecting multiple bioferrite harvesters shows the total amount of bioferrite contained (and increase per day) in all of them
+- Pit gates don't cause horror music to play unless you go into them, and horror music stops when you leave
 	</description>
 	<url>https://github.com/1trickPwnyta/AnomalyPatch</url>
 	<modDependencies>

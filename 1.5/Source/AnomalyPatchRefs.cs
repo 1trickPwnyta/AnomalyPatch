@@ -12,5 +12,6 @@ namespace AnomalyPatch
         public static readonly MethodInfo m_MapUtility_GetPlayerOccupiedMaps = AccessTools.Method(typeof(MapUtility), nameof(MapUtility.GetPlayerOccupiedMaps));
         public static readonly MethodInfo m_IInspectPane_get_ShouldShowPaneContents = AccessTools.Method(typeof(IInspectPane), "get_ShouldShowPaneContents");
         public static readonly MethodInfo m_InspectPaneUtility_DoPaneContentsForMultipleBioferriteHarvesters = AccessTools.Method(typeof(BioferriteHarvesterMultipleSelection.InspectPaneUtility), nameof(BioferriteHarvesterMultipleSelection.InspectPaneUtility.DoPaneContentsForMultipleBioferriteHarvesters));
+        public static readonly MethodInfo m_Building_BioferriteHarvester_get_BioferritePerDay = AccessTools.Method(typeof(Building_BioferriteHarvester), "get_BioferritePerDay");
     }
 }

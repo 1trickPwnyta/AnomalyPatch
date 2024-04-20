@@ -59,6 +59,7 @@
     <Compile Include="Debug.cs" />
     <Compile Include="AnomalyPatchMod.cs" />
     <Compile Include="HorrorMusic\MapUtility.cs" />
+    <Compile Include="HorrorMusic\Patch_HorrorRelaxTransition.cs" />
     <Compile Include="HorrorMusic\Patch_MusicManagerPlay.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="HorrorMusic\Patch_HorrorTensionTransition.cs" />

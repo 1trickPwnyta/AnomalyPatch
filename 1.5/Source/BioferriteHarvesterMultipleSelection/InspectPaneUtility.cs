@@ -19,12 +19,15 @@ namespace AnomalyPatch.BioferriteHarvesterMultipleSelection
                 {
                     Widgets.BeginGroup(rect2);
                     string text = "BioferriteHarvesterContained".Translate() + ": ";
-                    float amount = 0f;
+                    float contained = 0f;
+                    float perDay = 0f;
                     foreach (object obj in Find.Selector.SelectedObjects)
                     {
-                        amount += ((Building_BioferriteHarvester)obj).containedBioferrite;
+                        contained += ((Building_BioferriteHarvester)obj).containedBioferrite;
+                        perDay += (float)AnomalyPatchRefs.m_Building_BioferriteHarvester_get_BioferritePerDay.Invoke(obj, new object[] { });
                     }
-                    text += amount.ToString("0.00");
+                    text += contained.ToString("0.00");
+                    text += $" (+{perDay.ToString("0.00")} {"BioferriteHarvesterPerDay".Translate()})";
                     InspectPaneFiller.DrawInspectString(text, rect2);
                 }
                 catch (Exception ex)
