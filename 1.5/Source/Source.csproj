@@ -58,6 +58,7 @@
     <Compile Include="BioferriteHarvesterMultipleSelection\Patch_InspectPaneUtility.cs" />
     <Compile Include="Debug.cs" />
     <Compile Include="AnomalyPatchMod.cs" />
+    <Compile Include="DevourerWaterAssaultFix\IncidentWorker_DevourerWaterAssaultFix.cs" />
     <Compile Include="HorrorMusic\MapUtility.cs" />
     <Compile Include="HorrorMusic\Patch_HorrorRelaxTransition.cs" />
     <Compile Include="HorrorMusic\Patch_MusicManagerPlay.cs" />
