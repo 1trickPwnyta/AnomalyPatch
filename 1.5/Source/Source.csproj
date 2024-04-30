@@ -62,8 +62,13 @@
     <Compile Include="HorrorMusic\MapUtility.cs" />
     <Compile Include="HorrorMusic\Patch_HorrorRelaxTransition.cs" />
     <Compile Include="HorrorMusic\Patch_MusicManagerPlay.cs" />
+    <Compile Include="NoProjectNoStudy\Patch_WorkGiver_DarkStudyInteract.cs" />
+    <Compile Include="NoProjectNoStudy\StudyUtility.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="HorrorMusic\Patch_HorrorTensionTransition.cs" />
+    <Compile Include="StudyAndSuppressByDefault\Patch_UnnaturalCorpseTracker.cs" />
+    <Compile Include="StudyAndSuppressByDefault\Patch_AnomalyUtility.cs" />
+    <Compile Include="StudyAndSuppressByDefault\Patch_CompActivity.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />

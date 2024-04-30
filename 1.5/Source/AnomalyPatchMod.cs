@@ -1,4 +1,6 @@
 ﻿using HarmonyLib;
+using RimWorld;
+using System;
 using Verse;
 
 namespace AnomalyPatch
@@ -12,6 +14,7 @@ namespace AnomalyPatch
         {
             var harmony = new Harmony(PACKAGE_ID);
             harmony.PatchAll();
+            harmony.Patch(typeof(CompActivity).GetConstructor(new Type[] { }), null, typeof(StudyAndSuppressByDefault.Patch_CompActivity_ctor).GetMethod("Postfix"));
 
             Log.Message($"[{PACKAGE_NAME}] Loaded.");
         }

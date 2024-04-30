@@ -13,6 +13,8 @@ Full list of tweaks:
 - Selecting multiple bioferrite harvesters shows the total amount of bioferrite contained (and increase per day) in all of them
 - Pit gates don't cause horror music to play unless you go into them, and horror music stops when you leave
 - Bug fix: Void provocation rituals can spawn devourer water assaults on maps with no valid water to spawn from, resulting in the ritual doing nothing
+- Enables study and suppression of entities, including non-living entities such as obelisks, by default
+- Pawns will not study entities if no Anomaly research project is active and studying the entity provides no other benefits (like learning about obelisks or how to destroy the golden cube)
 	</description>
 	<url>https://github.com/1trickPwnyta/AnomalyPatch</url>
 	<modDependencies>
