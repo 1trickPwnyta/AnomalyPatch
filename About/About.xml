@@ -15,6 +15,8 @@ Full list of tweaks:
 - Bug fix: Void provocation rituals can spawn devourer water assaults on maps with no valid water to spawn from, resulting in the ritual doing nothing
 - Enables study and suppression of entities, including non-living entities such as obelisks, by default
 - Pawns will not study entities if no Anomaly research project is active and studying the entity provides no other benefits (like learning about obelisks or how to destroy the golden cube)
+- Caravan dialog food auto selection prioritizes twisted meat for ghouls and carniverous animals, then human/insect meat, then other meat.
+- Ghouls can hunt prey just like your animals can.
 	</description>
 	<url>https://github.com/1trickPwnyta/AnomalyPatch</url>
 	<modDependencies>
