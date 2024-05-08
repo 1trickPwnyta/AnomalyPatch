@@ -64,6 +64,8 @@
     <Compile Include="HorrorMusic\MapUtility.cs" />
     <Compile Include="HorrorMusic\Patch_HorrorRelaxTransition.cs" />
     <Compile Include="HorrorMusic\Patch_MusicManagerPlay.cs" />
+    <Compile Include="LabyrinthClosing\LabyrinthUtility.cs" />
+    <Compile Include="LabyrinthClosing\Patch_LabyrinthMapComponent.cs" />
     <Compile Include="NoProjectNoStudy\Patch_WorkGiver_DarkStudyInteract.cs" />
     <Compile Include="NoProjectNoStudy\StudyUtility.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

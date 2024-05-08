@@ -17,6 +17,7 @@ Full list of tweaks:
 - Pawns will not study entities if no Anomaly research project is active and studying the entity provides no other benefits (like learning about obelisks or how to destroy the golden cube)
 - Caravan dialog food auto selection prioritizes twisted meat for ghouls and carniverous animals, then human/insect meat, then other meat.
 - Ghouls can hunt prey just like your animals can.
+- When returning from the labyrinth created by a warped obelisk, any items transferred to your home map will be set to forbidden unless they appear in the home zone.
 	</description>
 	<url>https://github.com/1trickPwnyta/AnomalyPatch</url>
 	<modDependencies>
