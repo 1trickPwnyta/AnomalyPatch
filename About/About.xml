@@ -18,6 +18,7 @@ Full list of tweaks:
 - Caravan dialog food auto selection prioritizes twisted meat for ghouls and carniverous animals, then human/insect meat, then other meat.
 - Ghouls can hunt prey just like your animals can.
 - When returning from the labyrinth created by a warped obelisk, any items transferred to your home map will be set to forbidden unless they appear in the home zone.
+- When multiple obelisks reach dangerous (90%) activity levels, the alert on the right side of the screen will show the highest activity level instead of showing no acitivty level.
 	</description>
 	<url>https://github.com/1trickPwnyta/AnomalyPatch</url>
 	<modDependencies>
