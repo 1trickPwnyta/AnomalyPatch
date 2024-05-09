@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Patch>
+  <Operation Class="PatchOperationAdd">
+    <xpath>/Defs/HediffDef[defName="Anesthetic"]/comps/li[@Class="HediffCompProperties_Disappears"]</xpath>
+    <value>
+      <messageOnDisappear>{PAWN_nameDef}'s anesthetic has worn off.</messageOnDisappear>
+    </value>
+  </Operation>
+</Patch>
