@@ -1,5 +1,4 @@
 ﻿using HarmonyLib;
-using System.Linq;
 using Verse;
 using Verse.AI;
 
@@ -8,7 +7,7 @@ namespace AnomalyPatch.DontBlockDoors
     [HarmonyPatch(typeof(Toils_Goto))]
     [HarmonyPatch(nameof(Toils_Goto.GotoThing))]
     [HarmonyPatch(new[] { typeof(TargetIndex), typeof(PathEndMode), typeof(bool) })]
-    public static class Patch_Toils_Goto
+    public static class Patch_Toils_Goto_GotoThing
     {
         public static void Postfix(TargetIndex ind, PathEndMode peMode, bool canGotoSpawnedParent, ref Toil __result)
         {
@@ -24,15 +23,56 @@ namespace AnomalyPatch.DontBlockDoors
                     {
                         dest = thing.SpawnedParentOrMe;
                     }
-                    IntVec3 bestCell;
-                    if ((thing == null || !(thing is Pawn)) && !actor.InMentalState && GenAdj.AdjacentCells.Select(c => dest.Cell + c).Where(c => actor.CanReach(c, PathEndMode.OnCell, Danger.Deadly) && !c.GetRegion(actor.Map).IsDoorway).TryMinBy(c => actor.Position.DistanceTo(c), out bestCell))
+                    DontBlockDoorsUtility.GotoBestCell(dest, actor, peMode);
+                };
+            }
+        }
+    }
+
+    [HarmonyPatch(typeof(Toils_Goto))]
+    [HarmonyPatch(nameof(Toils_Goto.GotoCell))]
+    [HarmonyPatch(new[] { typeof(TargetIndex), typeof(PathEndMode) })]
+    public static class Patch_Toils_Goto_GotoCell_TargetIndex
+    {
+        public static void Postfix(TargetIndex ind, PathEndMode peMode, ref Toil __result)
+        {
+            if (peMode == PathEndMode.Touch)
+            {
+                Toil toil = __result;
+                toil.initAction = delegate ()
+                {
+                    Pawn actor = toil.actor;
+                    LocalTargetInfo target = actor.jobs.curJob.GetTarget(ind);
+                    if (actor.Position == target.Cell)
                     {
-                        actor.pather.StartPath(bestCell, PathEndMode.OnCell);
+                        actor.jobs.curDriver.ReadyForNextToil();
+                        return;
                     }
-                    else
+                    DontBlockDoorsUtility.GotoBestCell(target, actor, peMode);
+                };
+            }
+        }
+    }
+
+    [HarmonyPatch(typeof(Toils_Goto))]
+    [HarmonyPatch(nameof(Toils_Goto.GotoCell))]
+    [HarmonyPatch(new[] { typeof(IntVec3), typeof(PathEndMode) })]
+    public static class Patch_Toils_Goto_GotoCell_IntVec3
+    {
+        public static void Postfix(IntVec3 cell, PathEndMode peMode, ref Toil __result)
+        {
+            if (peMode == PathEndMode.Touch)
+            {
+                Toil toil = __result;
+                toil.initAction = delegate ()
+                {
+                    Pawn actor = toil.actor;
+                    if (actor.Position == cell)
                     {
-                        actor.pather.StartPath(dest, peMode);
+                        actor.jobs.curDriver.ReadyForNextToil();
+                        return;
                     }
+                    DontBlockDoorsUtility.GotoBestCell(cell, actor, peMode);
                 };
             }
         }
