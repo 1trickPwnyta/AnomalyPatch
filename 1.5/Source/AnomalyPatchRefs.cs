@@ -1,4 +1,5 @@
-﻿using AnomalyPatch.HorrorMusic;
+﻿using AnomalyPatch.AtmosphericHeaterFactor;
+using AnomalyPatch.HorrorMusic;
 using AnomalyPatch.LabyrinthClosing;
 using HarmonyLib;
 using RimWorld;
@@ -18,5 +19,6 @@ namespace AnomalyPatch
         public static readonly MethodInfo m_Building_BioferriteHarvester_get_BioferritePerDay = AccessTools.Method(typeof(Building_BioferriteHarvester), "get_BioferritePerDay");
         public static readonly MethodInfo m_LabyrinthUtility_ForbidIfOutsideHomeZone = AccessTools.Method(typeof(LabyrinthUtility), nameof(LabyrinthUtility.ForbidIfOutsideHomeZone));
         public static readonly MethodInfo m_SkipUtility_SkipTo = AccessTools.Method(typeof(SkipUtility), nameof(SkipUtility.SkipTo));
+        public static readonly MethodInfo m_AtmosphericHeaterUtility_MapHasAtmosphericHeater = AccessTools.Method(typeof(AtmosphericHeaterUtility), nameof(AtmosphericHeaterUtility.MapHasAtmosphericHeater));
     }
 }

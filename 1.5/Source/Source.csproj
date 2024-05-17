@@ -54,6 +54,8 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="AnomalyPatchRefs.cs" />
+    <Compile Include="AtmosphericHeaterFactor\AtmosphericHeaterUtility.cs" />
+    <Compile Include="AtmosphericHeaterFactor\Patch_Alert_NeedWarmClothes.cs" />
     <Compile Include="BioferriteHarvesterMultipleSelection\InspectPaneUtility.cs" />
     <Compile Include="BioferriteHarvesterMultipleSelection\Patch_MainTabWindow_Inspect.cs" />
     <Compile Include="DangerousActivityLevels\Patch_Alert_DangerousActivity.cs" />
