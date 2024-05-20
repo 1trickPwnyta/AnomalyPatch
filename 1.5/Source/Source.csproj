@@ -58,6 +58,7 @@
     <Compile Include="AtmosphericHeaterFactor\Patch_Alert_NeedWarmClothes.cs" />
     <Compile Include="BioferriteHarvesterMultipleSelection\InspectPaneUtility.cs" />
     <Compile Include="BioferriteHarvesterMultipleSelection\Patch_MainTabWindow_Inspect.cs" />
+    <Compile Include="CharacterHighlighting\Patch_SilhouetteUtility.cs" />
     <Compile Include="DangerousActivityLevels\Patch_Alert_DangerousActivity.cs" />
     <Compile Include="Debug.cs" />
     <Compile Include="AnomalyPatchMod.cs" />
