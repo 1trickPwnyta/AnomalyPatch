@@ -13,6 +13,8 @@ namespace AnomalyPatch
     {
         public static readonly FieldInfo f_Map_spawnedThings = AccessTools.Field(typeof(Map), nameof(Map.spawnedThings));
         public static readonly FieldInfo f_Pawn_PlayerSettings_pawn = AccessTools.Field(typeof(Pawn_PlayerSettings), "pawn");
+        public static readonly FieldInfo f_MessageTypeDefOf_NegativeEvent = AccessTools.Field(typeof(MessageTypeDefOf), nameof(MessageTypeDefOf.NegativeEvent));
+        public static readonly FieldInfo f_MessageTypeDefOf_SilentInput = AccessTools.Field(typeof(MessageTypeDefOf), nameof(MessageTypeDefOf.SilentInput));
 
         public static readonly MethodInfo m_ModsConfig_get_AnomalyActive = AccessTools.Method(typeof(ModsConfig), "get_AnomalyActive");
         public static readonly MethodInfo m_Find_get_Maps = AccessTools.Method(typeof(Find), "get_Maps");
