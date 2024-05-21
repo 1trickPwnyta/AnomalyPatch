@@ -23,6 +23,7 @@ Full list of tweaks:
 - Anesthetic now shows a message when it wears off so that if the pawn has crumbling mind (and they were anesthetized for a surgical inspection that told you so), you can remember to heal it with a healer mech serum or unnatural healing before it becomes permanent, after the anesthetic has worn off so that the anesthetic isn't healed instead. Kind of a specific situation, but trust me, you need this.
 - The "need warm clothes" alert on the right side of the screen won't show up if you have a powered and fueled atmospheric heater.
 - Enemy silhouettes are no longer hidden in unnatural darkness.
+- Colonists will adhere to zone restrictions while gathering offerings for psychic rituals and while moving to the psychic ritual spot.
 
 === Updates ===
 05/08/2024: Fixed world map bug when selecting any tile on starting world map screen, or selecting any tile while multiple bioferrite harvesters are selected
