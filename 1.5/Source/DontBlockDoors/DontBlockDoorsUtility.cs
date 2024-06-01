@@ -32,7 +32,15 @@ namespace AnomalyPatch.DontBlockDoors
 
         public static void GotoBestCell(LocalTargetInfo target, Pawn actor, PathEndMode peMode)
         {
-            IEnumerable<IntVec3> adjacentCells = GenAdj.AdjacentCells.Select(c => target.Cell + c);
+            IEnumerable<IntVec3> adjacentCells;
+            if (target.Thing == null)
+            {
+                adjacentCells = GenAdj.AdjacentCells.Select(c => target.Cell + c);
+            }
+            else
+            {
+                adjacentCells = GenAdj.CellsAdjacent8Way(target.Thing);
+            }
             IntVec3 bestCell;
             if (!actor.InMentalState && adjacentCells.Any(c => c.GetRegion(actor.Map).IsContainmentOrPrisonDoorway()) && adjacentCells.Where(c => actor.CanReach(c, PathEndMode.OnCell, Danger.Deadly) && !c.GetRegion(actor.Map).IsContainmentOrPrisonDoorway() && !c.HasTrap(actor.Map)).TryMinBy(c => actor.Position.DistanceTo(c), out bestCell))
             {
