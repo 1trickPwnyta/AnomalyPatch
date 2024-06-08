@@ -26,6 +26,7 @@ Full list of tweaks:
 - Colonists will adhere to zone restrictions while gathering offerings for psychic rituals and while moving to the psychic ritual spot.
 - Death pall resurrection messages no longer make a noise so you won't get inundated with beeps during death palls. Don't worry - you'll still see the message, and you'll still hear the gross corpsey sound of them resurrecting nearby.
 - Certain entity stats are no longer hidden (nociosphere, metalhorror, revenant).
+- The psychic ritual dialog arranges pawns by psychic sensitivity for your convenience.
 
 === Updates ===
 05/08/2024: Fixed world map bug when selecting any tile on starting world map screen, or selecting any tile while multiple bioferrite harvesters are selected
