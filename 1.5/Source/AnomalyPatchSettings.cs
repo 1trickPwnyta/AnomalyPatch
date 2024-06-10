@@ -8,6 +8,7 @@ namespace AnomalyPatch
         public static bool AtmosphericHeaterFactor = true;
         public static bool BioferriteHarvesterMultipleSelection = true;
         public static bool CharacterHighlighting = true;
+        public static bool DangerousActivityLevels = true;
 
         public static void DoSettingsWindowContents(Rect inRect)
         {
@@ -18,6 +19,7 @@ namespace AnomalyPatch
             listingStandard.CheckboxLabeled("AnomalyPatch_AtmosphericHeaterFactor".Translate(), ref AtmosphericHeaterFactor);
             listingStandard.CheckboxLabeled("AnomalyPatch_BioferriteHarvesterMultipleSelection".Translate(), ref BioferriteHarvesterMultipleSelection);
             listingStandard.CheckboxLabeled("AnomalyPatch_CharacterHighlighting".Translate(), ref CharacterHighlighting);
+            listingStandard.CheckboxLabeled("AnomalyPatch_DangerousActivityLevels".Translate(), ref DangerousActivityLevels);
 
             listingStandard.End();
         }
@@ -27,6 +29,7 @@ namespace AnomalyPatch
             Scribe_Values.Look(ref AtmosphericHeaterFactor, "AtmosphericHeaterFactor", true);
             Scribe_Values.Look(ref BioferriteHarvesterMultipleSelection, "BioferriteHarvesterMultipleSelection", true);
             Scribe_Values.Look(ref CharacterHighlighting, "CharacterHighlighting", true);
+            Scribe_Values.Look(ref DangerousActivityLevels, "DangerousActivityLevels", true);
         }
     }
 }

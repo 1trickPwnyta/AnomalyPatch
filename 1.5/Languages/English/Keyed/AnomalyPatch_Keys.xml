@@ -3,5 +3,6 @@
 	<AnomalyPatch_NoResearchSelected>No Anomaly research project active</AnomalyPatch_NoResearchSelected>
 	<AnomalyPatch_AtmosphericHeaterFactor>Disable "Need warm clothes" alert with atmospheric heater</AnomalyPatch_AtmosphericHeaterFactor>
 	<AnomalyPatch_BioferriteHarvesterMultipleSelection>Show total bioferrite contained with multiple harvesters selected</AnomalyPatch_BioferriteHarvesterMultipleSelection>
-	<AnomalyPatch_CharacterHighlighting>Show enemy silhouettes even in unnatural darkness</AnomalyPatch_CharacterHighlighting>
+	<AnomalyPatch_CharacterHighlighting>Show silhouettes even in unnatural darkness</AnomalyPatch_CharacterHighlighting>
+	<AnomalyPatch_DangerousActivityLevels>Show highest obelisk activity level in multiple alert</AnomalyPatch_DangerousActivityLevels>
 </LanguageData>
