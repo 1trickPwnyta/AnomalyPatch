@@ -10,7 +10,7 @@ namespace AnomalyPatch.BioferriteHarvesterMultipleSelection
     {
         public static void Postfix(ref bool __result)
         {
-            __result |= InspectPaneUtility.MultipleBioferriteHarvestersSelected();
+            __result |= InspectPaneUtility.ShouldShowContentsForMultipleBioferriteHarvesters();
         }
     }
 
@@ -20,7 +20,7 @@ namespace AnomalyPatch.BioferriteHarvesterMultipleSelection
     {
         public static bool Prefix(Rect rect)
         {
-            if (InspectPaneUtility.MultipleBioferriteHarvestersSelected())
+            if (InspectPaneUtility.ShouldShowContentsForMultipleBioferriteHarvesters())
             {
                 InspectPaneUtility.DoPaneContentsForMultipleBioferriteHarvesters(rect);
                 return false;

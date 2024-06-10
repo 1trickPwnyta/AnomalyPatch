@@ -8,9 +8,9 @@ namespace AnomalyPatch.BioferriteHarvesterMultipleSelection
 {
     public static class InspectPaneUtility
     {
-        public static bool MultipleBioferriteHarvestersSelected()
+        public static bool ShouldShowContentsForMultipleBioferriteHarvesters()
         {
-            return Find.Selector.NumSelected > 1 && Find.Selector.SelectedObjects.All(obj => obj is Thing && ((Thing)obj).def == ThingDefOf.BioferriteHarvester);
+            return AnomalyPatchSettings.BioferriteHarvesterMultipleSelection && Find.Selector.NumSelected > 1 && Find.Selector.SelectedObjects.All(obj => obj is Thing && ((Thing)obj).def == ThingDefOf.BioferriteHarvester);
         }
 
         public static void DoPaneContentsForMultipleBioferriteHarvesters(Rect rect)

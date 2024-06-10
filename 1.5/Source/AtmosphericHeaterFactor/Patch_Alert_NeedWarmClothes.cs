@@ -19,7 +19,7 @@ namespace AnomalyPatch.AtmosphericHeaterFactor
                 {
                     yield return instruction;
                     yield return new CodeInstruction(OpCodes.Ldloc_2);
-                    yield return new CodeInstruction(OpCodes.Call, AnomalyPatchRefs.m_AtmosphericHeaterUtility_MapHasAtmosphericHeater);
+                    yield return new CodeInstruction(OpCodes.Call, AnomalyPatchRefs.m_AtmosphericHeaterUtility_DisableNeedWarmClothesAlert);
                     yield return new CodeInstruction(OpCodes.Brtrue_S, instruction.operand);
                     foundCheck = true;
                     continue;

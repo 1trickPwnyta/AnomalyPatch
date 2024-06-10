@@ -11,6 +11,7 @@ namespace AnomalyPatch
 {
     public static class AnomalyPatchRefs
     {
+        public static readonly FieldInfo f_AnomalyPatchSettings_CharacterHighlighting = AccessTools.Field(typeof(AnomalyPatchSettings), nameof(AnomalyPatchSettings.CharacterHighlighting));
         public static readonly FieldInfo f_Map_spawnedThings = AccessTools.Field(typeof(Map), nameof(Map.spawnedThings));
         public static readonly FieldInfo f_Pawn_PlayerSettings_pawn = AccessTools.Field(typeof(Pawn_PlayerSettings), "pawn");
         public static readonly FieldInfo f_MessageTypeDefOf_NegativeEvent = AccessTools.Field(typeof(MessageTypeDefOf), nameof(MessageTypeDefOf.NegativeEvent));
@@ -24,7 +25,7 @@ namespace AnomalyPatch
         public static readonly MethodInfo m_Building_BioferriteHarvester_get_BioferritePerDay = AccessTools.Method(typeof(Building_BioferriteHarvester), "get_BioferritePerDay");
         public static readonly MethodInfo m_LabyrinthUtility_ForbidIfOutsideHomeZone = AccessTools.Method(typeof(LabyrinthUtility), nameof(LabyrinthUtility.ForbidIfOutsideHomeZone));
         public static readonly MethodInfo m_SkipUtility_SkipTo = AccessTools.Method(typeof(SkipUtility), nameof(SkipUtility.SkipTo));
-        public static readonly MethodInfo m_AtmosphericHeaterUtility_MapHasAtmosphericHeater = AccessTools.Method(typeof(AtmosphericHeaterUtility), nameof(AtmosphericHeaterUtility.MapHasAtmosphericHeater));
+        public static readonly MethodInfo m_AtmosphericHeaterUtility_DisableNeedWarmClothesAlert = AccessTools.Method(typeof(AtmosphericHeaterUtility), nameof(AtmosphericHeaterUtility.DisableNeedWarmClothesAlert));
         public static readonly MethodInfo m_LordUtility_GetLord = AccessTools.Method(typeof(LordUtility), nameof(LordUtility.GetLord), new[] { typeof(Pawn) });
         public static readonly MethodInfo m_LordUtility_IsPsychicRitual = AccessTools.Method(typeof(PsychicRitualZoning.LordUtility), nameof(PsychicRitualZoning.LordUtility.IsPsychicRitual));
     }

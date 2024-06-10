@@ -5,9 +5,9 @@ namespace AnomalyPatch.AtmosphericHeaterFactor
 {
     public static class AtmosphericHeaterUtility
     {
-        public static bool MapHasAtmosphericHeater(Map map)
+        public static bool DisableNeedWarmClothesAlert(Map map)
         {
-            return map.listerBuildings.AllBuildingsColonistOfDef(DefDatabase<ThingDef>.GetNamed("AtmosphericHeater")).Any(b => (b.PowerComp as CompPowerTrader).PowerOn && b.GetComp<CompRefuelable>().HasFuel);
+            return AnomalyPatchSettings.AtmosphericHeaterFactor && map.listerBuildings.AllBuildingsColonistOfDef(DefDatabase<ThingDef>.GetNamed("AtmosphericHeater")).Any(b => (b.PowerComp as CompPowerTrader).PowerOn && b.GetComp<CompRefuelable>().HasFuel);
         }
     }
 }

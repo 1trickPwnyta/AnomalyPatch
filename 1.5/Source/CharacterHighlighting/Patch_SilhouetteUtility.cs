@@ -16,9 +16,11 @@ namespace AnomalyPatch.CharacterHighlighting
             {
                 if (instruction.opcode == OpCodes.Call && (MethodInfo)instruction.operand == AnomalyPatchRefs.m_ModsConfig_get_AnomalyActive)
                 {
-                    CodeInstruction newInstruction = new CodeInstruction(OpCodes.Ldc_I4_0);
+                    CodeInstruction newInstruction = new CodeInstruction(OpCodes.Ldsfld, AnomalyPatchRefs.f_AnomalyPatchSettings_CharacterHighlighting);
                     newInstruction.labels.AddRange(instruction.labels);
                     yield return newInstruction;
+                    yield return new CodeInstruction(OpCodes.Ldc_I4_1);
+                    yield return new CodeInstruction(OpCodes.Xor);
                     continue;
                 }
 
