@@ -11,7 +11,7 @@ This mod makes a handful of small tweaks to the Anomaly DLC that are intended to
 
 Full list of tweaks:
 - Selecting multiple bioferrite harvesters shows the total amount of bioferrite contained (and increase per day) in all of them
-- Pit gates don't cause horror music to play unless you go into them, and horror music stops when you leave
+- Pit gates don't cause horror music to play unless you go into them, and horror music stops when you leave, and enemies in the undercave don't cause combat music to play unless you're in there with them, and combat music stops when you leave.
 - Bug fix: Void provocation rituals can spawn devourer water assaults on maps with no valid water to spawn from, resulting in the ritual doing nothing
 - Enables study and suppression of entities, including non-living entities such as obelisks, by default
 - Pawns will not study entities if no Anomaly research project is active and studying the entity provides no other benefits (like learning about obelisks or how to destroy the golden cube)
@@ -20,15 +20,16 @@ Full list of tweaks:
 - When returning from the labyrinth created by a warped obelisk, any items transferred to your home map will be set to forbidden unless they appear in the home zone.
 - When multiple obelisks reach dangerous (90%) activity levels, the alert on the right side of the screen will show the highest activity level instead of showing no acitivty level.
 - When working, colonists will try to find a spot to stand in that doesn't hold a containment cell or prison door open if possible. This way they won't compromise entity containment while building flooring etc. in a containment cell or allow a prisoner to escape.
-- Anesthetic now shows a message when it wears off so that if the pawn has crumbling mind (and they were anesthetized for a surgical inspection that told you so), you can remember to heal it with a healer mech serum or unnatural healing before it becomes permanent, after the anesthetic has worn off so that the anesthetic isn't healed instead. Kind of a specific situation, but trust me, you need this.
 - The "need warm clothes" alert on the right side of the screen won't show up if you have a powered and fueled atmospheric heater.
 - Pawn silhouettes (when zoomed out) are no longer hidden in unnatural darkness.
 - Colonists will adhere to zone restrictions while gathering offerings for psychic rituals and while moving to the psychic ritual spot.
 - Death pall resurrection messages no longer make a noise so you won't get inundated with beeps during death palls. Don't worry - you'll still see the message, and you'll still hear the gross corpsey sound of them resurrecting nearby.
 - Certain entity stats are no longer hidden (nociosphere, metalhorror, revenant).
 - The psychic ritual dialog arranges pawns by psychic sensitivity for your convenience.
+- Corpses initially spawned around the void monolith are forbidden by default.
 
 === Updates ===
+06/10/2024: Added many new tweaks, added settings to toggle each tweak
 05/08/2024: Fixed world map bug when selecting any tile on starting world map screen, or selecting any tile while multiple bioferrite harvesters are selected
 	</description>
 	<url>https://github.com/1trickPwnyta/AnomalyPatch</url>

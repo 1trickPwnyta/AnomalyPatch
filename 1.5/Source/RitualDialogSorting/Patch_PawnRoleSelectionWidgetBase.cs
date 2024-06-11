@@ -12,7 +12,7 @@ namespace AnomalyPatch.RitualDialogSorting
     {
         public static void Prefix(PawnRoleSelectionWidgetBase<PsychicRitualRoleDef> __instance, ref IEnumerable<Pawn> selectedPawns)
         {
-            if (__instance is PawnPsychicRitualRoleSelectionWidget)
+            if (AnomalyPatchSettings.RitualDialogSorting && __instance is PawnPsychicRitualRoleSelectionWidget)
             {
                 selectedPawns = selectedPawns.OrderByDescending(p => p.GetStatValue(StatDefOf.PsychicSensitivity));
             }

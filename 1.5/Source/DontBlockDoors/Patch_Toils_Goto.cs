@@ -11,7 +11,7 @@ namespace AnomalyPatch.DontBlockDoors
     {
         public static void Postfix(TargetIndex ind, PathEndMode peMode, bool canGotoSpawnedParent, ref Toil __result)
         {
-            if (peMode == PathEndMode.Touch)
+            if (AnomalyPatchSettings.DontBlockDoors && peMode == PathEndMode.Touch)
             {
                 Toil toil = __result;
                 toil.initAction = delegate ()
@@ -36,7 +36,7 @@ namespace AnomalyPatch.DontBlockDoors
     {
         public static void Postfix(TargetIndex ind, PathEndMode peMode, ref Toil __result)
         {
-            if (peMode == PathEndMode.Touch)
+            if (AnomalyPatchSettings.DontBlockDoors && peMode == PathEndMode.Touch)
             {
                 Toil toil = __result;
                 toil.initAction = delegate ()
@@ -61,7 +61,7 @@ namespace AnomalyPatch.DontBlockDoors
     {
         public static void Postfix(IntVec3 cell, PathEndMode peMode, ref Toil __result)
         {
-            if (peMode == PathEndMode.Touch)
+            if (AnomalyPatchSettings.DontBlockDoors && peMode == PathEndMode.Touch)
             {
                 Toil toil = __result;
                 toil.initAction = delegate ()

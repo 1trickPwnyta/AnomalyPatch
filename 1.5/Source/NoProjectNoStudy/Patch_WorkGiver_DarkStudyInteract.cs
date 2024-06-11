@@ -11,7 +11,7 @@ namespace AnomalyPatch.NoProjectNoStudy
     {
         public static void Postfix(Thing t, ref bool __result)
         {
-            if (__result)
+            if (AnomalyPatchSettings.NoProjectNoStudy && __result)
             {
                 Thing entity = t is Building_HoldingPlatform ? ((Building_HoldingPlatform)t).HeldPawn : t;
                 if (!StudyUtility.ResearchSelectedForEntity(entity) && !StudyUtility.StudyMakesProgressForEntity(entity))

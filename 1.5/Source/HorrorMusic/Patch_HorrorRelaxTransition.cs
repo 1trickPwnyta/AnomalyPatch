@@ -11,7 +11,7 @@ namespace AnomalyPatch.HorrorMusic
     {
         public static void Postfix(PocketMapParent pocketMap, ref bool __result)
         {
-            if (pocketMap.Map.generatorDef == MapGeneratorDefOf.Undercave)
+            if (AnomalyPatchSettings.HorrorMusic && pocketMap.Map.generatorDef == MapGeneratorDefOf.Undercave && !pocketMap.Map.mapPawns.AnyColonistSpawned)
             {
                 __result = false;
             }
@@ -24,7 +24,10 @@ namespace AnomalyPatch.HorrorMusic
     {
         public static void Postfix(Map map, ref bool __result)
         {
-            __result = map.listerThings.AnyThingWithDef(ThingDefOf.FleshmassHeart) || map.listerThings.AnyThingWithDef(ThingDefOf.Noctolith);
+            if (AnomalyPatchSettings.HorrorMusic)
+            {
+                __result = map.listerThings.AnyThingWithDef(ThingDefOf.FleshmassHeart) || map.listerThings.AnyThingWithDef(ThingDefOf.Noctolith);
+            }
         }
     }
 }

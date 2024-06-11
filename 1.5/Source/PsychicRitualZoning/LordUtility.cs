@@ -5,9 +5,9 @@ namespace AnomalyPatch.PsychicRitualZoning
 {
     public static class LordUtility
     {
-        public static bool IsPsychicRitual(Lord lord)
+        public static bool LordRespectsAllowedArea(Lord lord)
         {
-            return lord != null && lord.LordJob is LordJob_PsychicRitual;
+            return AnomalyPatchSettings.PsychicRitualZoning && lord != null && lord.LordJob is LordJob_PsychicRitual;
         }
     }
 }

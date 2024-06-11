@@ -12,15 +12,18 @@ namespace AnomalyPatch.FoodPriority
     {
         public static void Postfix(ThingDef food, Pawn pawn, ref float __result)
         {
-            if (!pawn.RaceProps.Humanlike || pawn.IsGhoul)
+            if (AnomalyPatchSettings.FoodPriority)
             {
-                if (food == ThingDefOf.Meat_Twisted)
+                if (!pawn.RaceProps.Humanlike || pawn.IsGhoul)
                 {
-                    __result += 0.2f;
-                }
-                else if (food == ThingDefOf.Meat_Human || food == ThingDef.Named("Meat_Megaspider"))
-                {
-                    __result += 0.1f;
+                    if (food == ThingDefOf.Meat_Twisted)
+                    {
+                        __result += 0.2f;
+                    }
+                    else if (food == ThingDefOf.Meat_Human || food == ThingDef.Named("Meat_Megaspider"))
+                    {
+                        __result += 0.1f;
+                    }
                 }
             }
         }

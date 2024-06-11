@@ -10,8 +10,11 @@ namespace AnomalyPatch.StudyAndSuppressByDefault
     {
         public static void Postfix(UnnaturalCorpse __result)
         {
-            __result.Forbiddable.Forbidden = false;
-            __result.GetComp<CompStudiable>().studyEnabled = true;
+            if (AnomalyPatchSettings.StudyAndSuppressByDefault)
+            {
+                __result.Forbiddable.Forbidden = false;
+                __result.GetComp<CompStudiable>().studyEnabled = true;
+            }
         }
     }
 }

@@ -67,7 +67,11 @@
     <Compile Include="DevourerWaterAssaultFix\IncidentWorker_DevourerWaterAssaultFix.cs" />
     <Compile Include="DontBlockDoors\DontBlockDoorsUtility.cs" />
     <Compile Include="DontBlockDoors\Patch_Toils_Goto.cs" />
+    <Compile Include="DontHideStats\Patch_StatDrawEntry.cs" />
+    <Compile Include="DontHideStats\StatUtility.cs" />
     <Compile Include="FoodPriority\Patch_CaravanPawnsNeedsUtility.cs" />
+    <Compile Include="ForbidMonolithCorpses\CorpseUtility.cs" />
+    <Compile Include="ForbidMonolithCorpses\Patch_GenStep_Monolith.cs" />
     <Compile Include="GhoulHunting\Patch_FoodUtility.cs" />
     <Compile Include="HorrorMusic\MapUtility.cs" />
     <Compile Include="HorrorMusic\Patch_HorrorRelaxTransition.cs" />
@@ -80,6 +84,7 @@
     <Compile Include="PsychicRitualZoning\LordUtility.cs" />
     <Compile Include="PsychicRitualZoning\Patch_Pawn_PlayerSettings.cs" />
     <Compile Include="RitualDialogSorting\Patch_PawnRoleSelectionWidgetBase.cs" />
+    <Compile Include="StudyAndSuppressByDefault\Patch_CompStudiable.cs" />
     <Compile Include="StudyAndSuppressByDefault\Patch_UnnaturalCorpseTracker.cs" />
     <Compile Include="StudyAndSuppressByDefault\Patch_AnomalyUtility.cs" />
     <Compile Include="StudyAndSuppressByDefault\Patch_CompActivity.cs" />

@@ -5,4 +5,17 @@
 	<AnomalyPatch_BioferriteHarvesterMultipleSelection>Show total bioferrite contained with multiple harvesters selected</AnomalyPatch_BioferriteHarvesterMultipleSelection>
 	<AnomalyPatch_CharacterHighlighting>Show silhouettes even in unnatural darkness</AnomalyPatch_CharacterHighlighting>
 	<AnomalyPatch_DangerousActivityLevels>Show highest obelisk activity level in multiple alert</AnomalyPatch_DangerousActivityLevels>
+	<AnomalyPatch_DeathPallResurrectionSound>Death pall resurrection messages are silent</AnomalyPatch_DeathPallResurrectionSound>
+	<AnomalyPatch_DevourerWaterAssaultFix>Fix void provocation bug with devourer water assault</AnomalyPatch_DevourerWaterAssaultFix>
+	<AnomalyPatch_DontBlockDoors>Don't perform work in a containment or prison cell doorway</AnomalyPatch_DontBlockDoors>
+	<AnomalyPatch_FoodPriority>Prioritize twisted meat for caravaning ghouls and animals</AnomalyPatch_FoodPriority>
+	<AnomalyPatch_GhoulHunting>Allow ghouls to hunt prey on their own</AnomalyPatch_GhoulHunting>
+	<AnomalyPatch_HorrorMusic>Pit gates don't cause horror/combat music to play unless you're in them</AnomalyPatch_HorrorMusic>
+	<AnomalyPatch_LabyrinthClosing>Forbid items from the labyrinth outside the home area</AnomalyPatch_LabyrinthClosing>
+	<AnomalyPatch_NoProjectNoStudy>Don't do dark study without an anomaly research project active</AnomalyPatch_NoProjectNoStudy>
+	<AnomalyPatch_PsychicRitualZoning>Adhere to zone restrictions while preparing for psychic rituals</AnomalyPatch_PsychicRitualZoning>
+	<AnomalyPatch_RitualDialogSorting>Sort pawns by psychic sensitivity in psychic ritual dialog</AnomalyPatch_RitualDialogSorting>
+	<AnomalyPatch_StudyAndSuppressByDefault>Enable study and suppression of entities by default</AnomalyPatch_StudyAndSuppressByDefault>
+	<AnomalyPatch_DontHideStats>Don't hide entity stats</AnomalyPatch_DontHideStats>
+	<AnomalyPatch_ForbidMonolithCorpses>Automatically forbid corpses spawned around monolith</AnomalyPatch_ForbidMonolithCorpses>
 </LanguageData>

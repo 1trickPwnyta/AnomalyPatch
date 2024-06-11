@@ -6,9 +6,9 @@ namespace AnomalyPatch.HorrorMusic
 {
     public static class MapUtility
     {
-        public static List<Map> GetPlayerOccupiedMaps()
+        public static List<Map> GetCombatMusicMapCandidates()
         {
-            return Find.Maps.Where(map => map.mapPawns.AnyColonistSpawned || map.IsPlayerHome).ToList();
+            return Find.Maps.Where(map => !AnomalyPatchSettings.HorrorMusic || map.mapPawns.AnyColonistSpawned || map.IsPlayerHome).ToList();
         }
     }
 }

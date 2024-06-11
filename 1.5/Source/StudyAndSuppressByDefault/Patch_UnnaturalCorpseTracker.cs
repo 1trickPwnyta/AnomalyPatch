@@ -9,7 +9,10 @@ namespace AnomalyPatch.StudyAndSuppressByDefault
     {
         public static void Postfix(UnnaturalCorpse ___corpse)
         {
-            ___corpse.Forbiddable.Forbidden = false;
+            if (AnomalyPatchSettings.StudyAndSuppressByDefault)
+            {
+                ___corpse.Forbiddable.Forbidden = false;
+            }
         }
     }
 }

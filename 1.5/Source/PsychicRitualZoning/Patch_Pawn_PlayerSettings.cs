@@ -27,7 +27,7 @@ namespace AnomalyPatch.PsychicRitualZoning
                     yield return new CodeInstruction(OpCodes.Ldarg_0);
                     yield return new CodeInstruction(OpCodes.Ldfld, AnomalyPatchRefs.f_Pawn_PlayerSettings_pawn);
                     yield return new CodeInstruction(OpCodes.Call, AnomalyPatchRefs.m_LordUtility_GetLord);
-                    yield return new CodeInstruction(OpCodes.Call, AnomalyPatchRefs.m_LordUtility_IsPsychicRitual);
+                    yield return new CodeInstruction(OpCodes.Call, AnomalyPatchRefs.m_LordUtility_LordRespectsAllowedArea);
                     yield return new CodeInstruction(OpCodes.Brtrue_S, instruction.operand);
                     finished = true;
                     continue;

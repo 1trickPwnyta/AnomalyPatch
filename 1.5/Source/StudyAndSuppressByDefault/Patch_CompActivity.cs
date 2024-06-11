@@ -7,7 +7,10 @@ namespace AnomalyPatch.StudyAndSuppressByDefault
     {
         public static void Postfix(CompActivity __instance)
         {
-            __instance.suppressionEnabled = true;
+            if (AnomalyPatchSettings.StudyAndSuppressByDefault)
+            {
+                __instance.suppressionEnabled = true;
+            }
         }
     }
 }

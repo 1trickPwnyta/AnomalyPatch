@@ -7,9 +7,9 @@ namespace AnomalyPatch.LabyrinthClosing
     {
         public static void ForbidIfOutsideHomeZone(Thing thing)
         {
-            if (!thing.Map.areaManager.Home[thing.Position])
+            if (AnomalyPatchSettings.LabyrinthClosing)
             {
-                thing.SetForbidden(true);
+                thing.SetForbiddenIfOutsideHomeArea();
             }
         }
     }

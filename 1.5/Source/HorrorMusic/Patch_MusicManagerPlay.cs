@@ -16,7 +16,7 @@ namespace AnomalyPatch.HorrorMusic
             {
                 if (instruction.opcode == OpCodes.Call && (MethodInfo)instruction.operand == AnomalyPatchRefs.m_Find_get_Maps)
                 {
-                    instruction.operand = AnomalyPatchRefs.m_MapUtility_GetPlayerOccupiedMaps;
+                    instruction.operand = AnomalyPatchRefs.m_MapUtility_GetCombatMusicMapCandidates;
                 }
 
                 yield return instruction;
