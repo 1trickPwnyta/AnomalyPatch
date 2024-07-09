@@ -14,7 +14,7 @@ namespace AnomalyPatch.RitualDialogSorting
         {
             if (AnomalyPatchSettings.RitualDialogSorting && __instance is PawnPsychicRitualRoleSelectionWidget)
             {
-                selectedPawns = selectedPawns.OrderByDescending(p => p.GetStatValue(StatDefOf.PsychicSensitivity));
+                selectedPawns = selectedPawns.OrderByDescending(p => !p.Downed && p.IsFreeNonSlaveColonist).ThenByDescending(p => p.GetStatValue(StatDefOf.PsychicSensitivity));
             }
         }
     }
