@@ -18,4 +18,5 @@
 	<AnomalyPatch_StudyAndSuppressByDefault>Enable study and suppression of entities by default</AnomalyPatch_StudyAndSuppressByDefault>
 	<AnomalyPatch_DontHideStats>Don't hide entity stats</AnomalyPatch_DontHideStats>
 	<AnomalyPatch_ForbidMonolithCorpses>Automatically forbid corpses spawned around monolith</AnomalyPatch_ForbidMonolithCorpses>
+	<AnomalyPatch_ScheduleTabFix>Don't show friendly shamblers in the schedule tab</AnomalyPatch_ScheduleTabFix>
 </LanguageData>

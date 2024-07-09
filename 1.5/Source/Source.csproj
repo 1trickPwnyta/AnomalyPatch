@@ -84,6 +84,7 @@
     <Compile Include="PsychicRitualZoning\LordUtility.cs" />
     <Compile Include="PsychicRitualZoning\Patch_Pawn_PlayerSettings.cs" />
     <Compile Include="RitualDialogSorting\Patch_PawnRoleSelectionWidgetBase.cs" />
+    <Compile Include="ScheduleTabFix\Patch_MainTabWindow_Schedule.cs" />
     <Compile Include="StudyAndSuppressByDefault\Patch_CompStudiable.cs" />
     <Compile Include="StudyAndSuppressByDefault\Patch_UnnaturalCorpseTracker.cs" />
     <Compile Include="StudyAndSuppressByDefault\Patch_AnomalyUtility.cs" />
