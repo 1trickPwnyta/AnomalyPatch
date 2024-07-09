@@ -27,8 +27,10 @@ Full list of tweaks:
 - Certain entity stats are no longer hidden (nociosphere, metalhorror, revenant).
 - The psychic ritual dialog arranges pawns by psychic sensitivity for your convenience.
 - Corpses initially spawned around the void monolith are forbidden by default.
+- Bug fix: Friendly shamblers show up in the schedule tab
 
 === Updates ===
+07/09/2024: Sort prisoners and downed colonists last in psychic ritual dialogs, fix friendly shambler in schedule tab bug
 06/10/2024: Added many new tweaks, added settings to toggle each tweak
 05/08/2024: Fixed world map bug when selecting any tile on starting world map screen, or selecting any tile while multiple bioferrite harvesters are selected
 	</description>
