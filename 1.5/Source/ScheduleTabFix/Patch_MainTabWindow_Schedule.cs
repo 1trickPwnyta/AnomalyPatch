@@ -14,7 +14,7 @@ namespace AnomalyPatch.ScheduleTabFix
         {
             if (AnomalyPatchSettings.ScheduleTabFix)
             {
-                __result = __result.Where(p => p.timetable != null || (p.playerSettings != null && p.playerSettings.SupportsAllowedAreas));
+                __result = __result.Where(p => !p.IsMutant || p.mutant.Def.respectsAllowedArea);
             }
         }
     }
