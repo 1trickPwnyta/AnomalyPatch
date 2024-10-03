@@ -1,8 +1,10 @@
 ﻿using HarmonyLib;
 using RimWorld;
 using System;
+using System.Reflection;
 using UnityEngine;
 using Verse;
+using Verse.AI.Group;
 
 namespace AnomalyPatch
 {
@@ -18,6 +20,8 @@ namespace AnomalyPatch
             var harmony = new Harmony(PACKAGE_ID);
             harmony.PatchAll();
             harmony.Patch(typeof(CompActivity).GetConstructor(new Type[] { }), null, typeof(StudyAndSuppressByDefault.Patch_CompActivity_ctor).GetMethod("Postfix"));
+            harmony.Patch(typeof(JobDriver_ActivitySuppression).GetNestedType("<>c__DisplayClass9_0", BindingFlags.NonPublic).Method("<TrySuppress>b__1"), null, null, typeof(StopSuppression.Patch_JobDriver_ActivitySuppression).Method(nameof(StopSuppression.Patch_JobDriver_ActivitySuppression.Transpiler)));
+            harmony.Patch(typeof(PawnPsychicRitualRoleSelectionWidget).GetConstructor(new[] { typeof(PsychicRitualDef), typeof(PsychicRitualCandidatePool), typeof(PsychicRitualRoleAssignments) }), null, typeof(RitualDialogSorting.Patch_PawnPsychicRitualRoleSelectionWidget).GetMethod("Postfix"));
 
             Settings = GetSettings<AnomalyPatchSettings>();
 

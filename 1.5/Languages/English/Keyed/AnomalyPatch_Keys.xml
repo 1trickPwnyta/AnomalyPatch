@@ -19,4 +19,10 @@
 	<AnomalyPatch_DontHideStats>Don't hide entity stats</AnomalyPatch_DontHideStats>
 	<AnomalyPatch_ForbidMonolithCorpses>Automatically forbid corpses spawned around monolith</AnomalyPatch_ForbidMonolithCorpses>
 	<AnomalyPatch_ScheduleTabFix>Don't show friendly shamblers in the schedule tab</AnomalyPatch_ScheduleTabFix>
+	<AnomalyPatch_ShamblerDoors>Allow hostile shamblers to pass through held-open doors</AnomalyPatch_ShamblerDoors>
+	<AnomalyPatch_StopSuppression>Allow pawns to stop suppressing obelisk activity before target level reached</AnomalyPatch_StopSuppression>
+	<AnomalyPatch_HoldingPlatformAlert>Disable holding platforms needed alert</AnomalyPatch_HoldingPlatformAlert>
+	<AnomalyPatch_SortBy>Sort by:</AnomalyPatch_SortBy>
+	<AnomalyPatch_Reverse>Reverse</AnomalyPatch_Reverse>
+	<AnomalyPatch_Age>Age</AnomalyPatch_Age>
 </LanguageData>

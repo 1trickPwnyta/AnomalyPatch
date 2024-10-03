@@ -19,6 +19,7 @@ namespace AnomalyPatch
         public static readonly FieldInfo f_MessageTypeDefOf_NegativeEvent = AccessTools.Field(typeof(MessageTypeDefOf), nameof(MessageTypeDefOf.NegativeEvent));
         public static readonly FieldInfo f_MessageTypeDefOf_SilentInput = AccessTools.Field(typeof(MessageTypeDefOf), nameof(MessageTypeDefOf.SilentInput));
         public static readonly FieldInfo f_ThingDef_hideStats = AccessTools.Field(typeof(ThingDef), nameof(ThingDef.hideStats));
+        public static readonly FieldInfo f_AnomalyPatch_Settings_StopSuppression = AccessTools.Field(typeof(AnomalyPatchSettings), nameof(AnomalyPatchSettings.StopSuppression));
 
         public static readonly MethodInfo m_ModsConfig_get_AnomalyActive = AccessTools.Method(typeof(ModsConfig), "get_AnomalyActive");
         public static readonly MethodInfo m_Find_get_Maps = AccessTools.Method(typeof(Find), "get_Maps");
@@ -34,5 +35,7 @@ namespace AnomalyPatch
         public static readonly MethodInfo m_StatUtility_ShouldHideStats = AccessTools.Method(typeof(DontHideStats.StatUtility), nameof(DontHideStats.StatUtility.ShouldHideStats));
         public static readonly MethodInfo m_GenSpawn_Spawn = AccessTools.Method(typeof(GenSpawn), nameof(GenSpawn.Spawn), new[] { typeof(Thing), typeof(IntVec3), typeof(Map), typeof(WipeMode) });
         public static readonly MethodInfo m_CorpseUtility_SetForbidden = AccessTools.Method(typeof(CorpseUtility), nameof(CorpseUtility.SetForbidden));
+        public static readonly MethodInfo m_CompActivity_get_ActivityLevel = AccessTools.Method(typeof(CompActivity), "get_ActivityLevel");
+        public static readonly MethodInfo m_ThingCompUtility_TryGetComp = AccessTools.Method(typeof(ThingCompUtility), nameof(ThingCompUtility.TryGetComp), new[] { typeof(Thing) }, new[] { typeof(CompActivity) });
     }
 }

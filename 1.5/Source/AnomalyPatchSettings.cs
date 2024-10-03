@@ -1,4 +1,5 @@
-﻿using UnityEngine;
+﻿using AnomalyPatch.RitualDialogSorting;
+using UnityEngine;
 using Verse;
 
 namespace AnomalyPatch
@@ -23,6 +24,9 @@ namespace AnomalyPatch
         public static bool DontHideStats = true;
         public static bool ForbidMonolithCorpses = true;
         public static bool ScheduleTabFix = true;
+        public static bool ShamblerDoors = true;
+        public static bool StopSuppression = true;
+        public static bool HoldingPlatformAlert = true;
 
         public static void DoSettingsWindowContents(Rect inRect)
         {
@@ -48,6 +52,9 @@ namespace AnomalyPatch
             listingStandard.CheckboxLabeled("AnomalyPatch_DontHideStats".Translate(), ref DontHideStats);
             listingStandard.CheckboxLabeled("AnomalyPatch_ForbidMonolithCorpses".Translate(), ref ForbidMonolithCorpses);
             listingStandard.CheckboxLabeled("AnomalyPatch_ScheduleTabFix".Translate(), ref ScheduleTabFix);
+            listingStandard.CheckboxLabeled("AnomalyPatch_ShamblerDoors".Translate(), ref ShamblerDoors);
+            listingStandard.CheckboxLabeled("AnomalyPatch_StopSuppression".Translate(), ref StopSuppression);
+            listingStandard.CheckboxLabeled("AnomalyPatch_HoldingPlatformAlert".Translate(), ref HoldingPlatformAlert);
 
             listingStandard.End();
         }
@@ -72,6 +79,9 @@ namespace AnomalyPatch
             Scribe_Values.Look(ref DontHideStats, "DontHideStats", true);
             Scribe_Values.Look(ref ForbidMonolithCorpses, "ForbidMonolithCorpses", true);
             Scribe_Values.Look(ref ScheduleTabFix, "ScheduleTabFix", true);
+            Scribe_Values.Look(ref ShamblerDoors, "ShamblerDoors", false); // should default to false if mod already active when update happens
+            Scribe_Values.Look(ref StopSuppression, "StopSuppression", true);
+            Scribe_Values.Look(ref HoldingPlatformAlert, "HoldingPlatformAlert", true);
         }
     }
 }

@@ -51,6 +51,14 @@
       <HintPath>..\..\..\..\..\..\Program Files (x86)\Steam\steamapps\common\RimWorld\RimWorldWin64_Data\Managed\UnityEngine.CoreModule.dll</HintPath>
       <Private>False</Private>
     </Reference>
+    <Reference Include="UnityEngine.IMGUIModule">
+      <HintPath>..\..\..\..\..\..\Program Files (x86)\Steam\steamapps\common\RimWorld\RimWorldWin64_Data\Managed\UnityEngine.IMGUIModule.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="UnityEngine.TextRenderingModule">
+      <HintPath>..\..\..\..\..\..\Program Files (x86)\Steam\steamapps\common\RimWorld\RimWorldWin64_Data\Managed\UnityEngine.TextRenderingModule.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
   </ItemGroup>
   <ItemGroup>
     <Compile Include="AnomalyPatchRefs.cs" />
@@ -73,6 +81,7 @@
     <Compile Include="ForbidMonolithCorpses\CorpseUtility.cs" />
     <Compile Include="ForbidMonolithCorpses\Patch_GenStep_Monolith.cs" />
     <Compile Include="GhoulHunting\Patch_FoodUtility.cs" />
+    <Compile Include="HoldingPlatformAlert\Patch_Alert_NeedHoldingPlatform.cs" />
     <Compile Include="HorrorMusic\MapUtility.cs" />
     <Compile Include="HorrorMusic\Patch_HorrorRelaxTransition.cs" />
     <Compile Include="HorrorMusic\Patch_MusicManagerPlay.cs" />
@@ -83,8 +92,12 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="PsychicRitualZoning\LordUtility.cs" />
     <Compile Include="PsychicRitualZoning\Patch_Pawn_PlayerSettings.cs" />
+    <Compile Include="RitualDialogSorting\Patch_PawnPsychicRitualRoleSelectionWidget.cs" />
     <Compile Include="RitualDialogSorting\Patch_PawnRoleSelectionWidgetBase.cs" />
+    <Compile Include="RitualDialogSorting\RitualSortPropertyUtil.cs" />
     <Compile Include="ScheduleTabFix\Patch_MainTabWindow_Schedule.cs" />
+    <Compile Include="ShamblerDoors\Patch_Building_Door.cs" />
+    <Compile Include="StopSuppression\Patch_JobDriver_ActivitySuppression.cs" />
     <Compile Include="StudyAndSuppressByDefault\Patch_CompStudiable.cs" />
     <Compile Include="StudyAndSuppressByDefault\Patch_UnnaturalCorpseTracker.cs" />
     <Compile Include="StudyAndSuppressByDefault\Patch_AnomalyUtility.cs" />
