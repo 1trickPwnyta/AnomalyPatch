@@ -28,7 +28,6 @@ Full list of tweaks:
 - The psychic ritual dialog sorts pawns by psychic sensitivity or by age, at your option.
 - Corpses initially spawned around the void monolith are forbidden by default.
 - Bug fix: Friendly shamblers show up in the schedule tab
-- Bug fix: Hostile shamblers can't go through held-open doors
 - Colonists are no longer forced to finish suppressing obelisks in order to take breaks (useful for pawns with lower psychic sensitivity).
 
 === Updates ===

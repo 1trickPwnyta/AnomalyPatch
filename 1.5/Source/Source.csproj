@@ -96,7 +96,6 @@
     <Compile Include="RitualDialogSorting\Patch_PawnRoleSelectionWidgetBase.cs" />
     <Compile Include="RitualDialogSorting\RitualSortPropertyUtil.cs" />
     <Compile Include="ScheduleTabFix\Patch_MainTabWindow_Schedule.cs" />
-    <Compile Include="ShamblerDoors\Patch_Building_Door.cs" />
     <Compile Include="StopSuppression\Patch_JobDriver_ActivitySuppression.cs" />
     <Compile Include="StudyAndSuppressByDefault\Patch_CompStudiable.cs" />
     <Compile Include="StudyAndSuppressByDefault\Patch_UnnaturalCorpseTracker.cs" />
