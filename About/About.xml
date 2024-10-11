@@ -27,7 +27,6 @@ Full list of tweaks:
 - Certain entity stats are no longer hidden (nociosphere, metalhorror, revenant).
 - The psychic ritual dialog arranges pawns by psychic sensitivity for your convenience.
 - Corpses initially spawned around the void monolith are forbidden by default.
-- Bug fix: Friendly shamblers show up in the schedule tab
 
 === Updates ===
 07/09/2024: Fix friendly shambler in schedule tab bug for human shamblers too!
