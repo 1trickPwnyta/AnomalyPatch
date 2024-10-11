@@ -22,7 +22,6 @@ namespace AnomalyPatch
         public static bool StudyAndSuppressByDefault = true;
         public static bool DontHideStats = true;
         public static bool ForbidMonolithCorpses = true;
-        public static bool ScheduleTabFix = true;
 
         public static void DoSettingsWindowContents(Rect inRect)
         {
@@ -47,7 +46,6 @@ namespace AnomalyPatch
             listingStandard.CheckboxLabeled("AnomalyPatch_StudyAndSuppressByDefault".Translate(), ref StudyAndSuppressByDefault);
             listingStandard.CheckboxLabeled("AnomalyPatch_DontHideStats".Translate(), ref DontHideStats);
             listingStandard.CheckboxLabeled("AnomalyPatch_ForbidMonolithCorpses".Translate(), ref ForbidMonolithCorpses);
-            listingStandard.CheckboxLabeled("AnomalyPatch_ScheduleTabFix".Translate(), ref ScheduleTabFix);
 
             listingStandard.End();
         }
@@ -71,7 +69,6 @@ namespace AnomalyPatch
             Scribe_Values.Look(ref StudyAndSuppressByDefault, "StudyAndSuppressByDefault", true);
             Scribe_Values.Look(ref DontHideStats, "DontHideStats", true);
             Scribe_Values.Look(ref ForbidMonolithCorpses, "ForbidMonolithCorpses", true);
-            Scribe_Values.Look(ref ScheduleTabFix, "ScheduleTabFix", true);
         }
     }
 }
