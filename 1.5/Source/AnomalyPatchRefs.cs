@@ -1,4 +1,5 @@
 ﻿using AnomalyPatch.AtmosphericHeaterFactor;
+using AnomalyPatch.CreepJoinerLove;
 using AnomalyPatch.ForbidMonolithCorpses;
 using AnomalyPatch.HorrorMusic;
 using AnomalyPatch.LabyrinthClosing;
@@ -37,5 +38,6 @@ namespace AnomalyPatch
         public static readonly MethodInfo m_CorpseUtility_SetForbidden = AccessTools.Method(typeof(CorpseUtility), nameof(CorpseUtility.SetForbidden));
         public static readonly MethodInfo m_CompActivity_get_ActivityLevel = AccessTools.Method(typeof(CompActivity), "get_ActivityLevel");
         public static readonly MethodInfo m_ThingCompUtility_TryGetComp = AccessTools.Method(typeof(ThingCompUtility), nameof(ThingCompUtility.TryGetComp), new[] { typeof(Thing) }, new[] { typeof(CompActivity) });
+        public static readonly MethodInfo m_PawnDefUtilty_HasSameDefLabel = AccessTools.Method(typeof(PawnDefUtility), nameof(PawnDefUtility.HasSameDefLabel));
     }
 }

@@ -68,6 +68,8 @@
     <Compile Include="BioferriteHarvesterMultipleSelection\InspectPaneUtility.cs" />
     <Compile Include="BioferriteHarvesterMultipleSelection\Patch_MainTabWindow_Inspect.cs" />
     <Compile Include="CharacterHighlighting\Patch_SilhouetteUtility.cs" />
+    <Compile Include="CreepJoinerLove\Patch_Pawn_RelationsTracker.cs" />
+    <Compile Include="CreepJoinerLove\PawnDefUtility.cs" />
     <Compile Include="DangerousActivityLevels\Patch_Alert_DangerousActivity.cs" />
     <Compile Include="DeathPallResurrectionSound\Patch_GameCondition_DeathPall.cs" />
     <Compile Include="Debug.cs" />
