@@ -30,6 +30,7 @@ Full list of tweaks:
 - Colonists are no longer forced to finish suppressing obelisks in order to take breaks (useful for pawns with lower psychic sensitivity).
 - Holding platforms needed alert is disabled.
 - Creepjoiners and non-creepjoiners can now form romantic relationships with each other.
+- Bug fix: Void provocation rituals can spawn unnatural darkness on a different map from the one the ritual was performed on.
 
 === Updates ===
 10/10/2024: Remove friendly shambler in schedule tab bug fix (fixed in vanilla now)

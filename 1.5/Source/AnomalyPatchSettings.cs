@@ -25,6 +25,7 @@ namespace AnomalyPatch
         public static bool StopSuppression = true;
         public static bool HoldingPlatformAlert = true;
         public static bool CreepJoinerLove = true;
+        public static bool UnnaturalDarknessMapFix = true;
 
         public static void DoSettingsWindowContents(Rect inRect)
         {
@@ -52,6 +53,7 @@ namespace AnomalyPatch
             listingStandard.CheckboxLabeled("AnomalyPatch_StopSuppression".Translate(), ref StopSuppression);
             listingStandard.CheckboxLabeled("AnomalyPatch_HoldingPlatformAlert".Translate(), ref HoldingPlatformAlert);
             listingStandard.CheckboxLabeled("AnomalyPatch_CreepJoinerLove".Translate(), ref CreepJoinerLove);
+            listingStandard.CheckboxLabeled("AnomalyPatch_UnnaturalDarknessMapFix".Translate(), ref UnnaturalDarknessMapFix);
 
             listingStandard.End();
         }
@@ -78,6 +80,7 @@ namespace AnomalyPatch
             Scribe_Values.Look(ref StopSuppression, "StopSuppression", true);
             Scribe_Values.Look(ref HoldingPlatformAlert, "HoldingPlatformAlert", true);
             Scribe_Values.Look(ref CreepJoinerLove, "CreepJoinerLove", true);
+            Scribe_Values.Look(ref UnnaturalDarknessMapFix, "UnnaturalDarknessMapFix", true);
         }
     }
 }

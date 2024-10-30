@@ -102,6 +102,8 @@
     <Compile Include="StudyAndSuppressByDefault\Patch_UnnaturalCorpseTracker.cs" />
     <Compile Include="StudyAndSuppressByDefault\Patch_AnomalyUtility.cs" />
     <Compile Include="StudyAndSuppressByDefault\Patch_CompActivity.cs" />
+    <Compile Include="UnnaturalDarknessMapFix\IncidentWorker_GiveQuest_Map.cs" />
+    <Compile Include="UnnaturalDarknessMapFix\Patch_QuestNode_Root_UnnaturalDarkness.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
