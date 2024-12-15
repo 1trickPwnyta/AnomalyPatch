@@ -9,7 +9,7 @@ namespace AnomalyPatch.StudyAndSuppressByDefault
     {
         public static void Postfix(CompStudiable __instance)
         {
-            if (AnomalyPatchSettings.StudyAndSuppressByDefault)
+            if (AnomalyPatchSettings.StudyAndSuppressByDefault && __instance.Props.minMonolithLevelForStudy > 0)
             {
                 __instance.SetStudyEnabled(true);
             }

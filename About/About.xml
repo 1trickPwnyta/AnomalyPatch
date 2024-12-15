@@ -33,6 +33,7 @@ Full list of tweaks:
 - Bug fix: Void provocation rituals can spawn unnatural darkness on a different map from the one the ritual was performed on.
 
 === Updates ===
+12/15/2024: Fix bug where archonexus structures are study-enabled by default
 10/10/2024: Remove friendly shambler in schedule tab bug fix (fixed in vanilla now)
 07/09/2024: Fix friendly shambler in schedule tab bug for human shamblers too!
 07/09/2024: Sort prisoners and downed colonists last in psychic ritual dialogs, fix friendly shambler in schedule tab bug
