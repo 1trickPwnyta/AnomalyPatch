@@ -65,7 +65,7 @@ namespace AnomalyPatch.DeadGhoulsInColonistBar
                     yield return instruction;
                     yield return new CodeInstruction(OpCodes.Brtrue_S, addCorpseLabel1);
                     yield return new CodeInstruction(OpCodes.Ldloc_S, 5);
-                    yield return new CodeInstruction(OpCodes.Callvirt, typeof(Pawn).Method("get_IsColonyMutant"));
+                    yield return new CodeInstruction(OpCodes.Call, typeof(PatchUtility_ColonistBar).Method(nameof(PatchUtility_ColonistBar.ShouldShowDeadGhoul)));
                     yield return new CodeInstruction(OpCodes.Brtrue_S, addCorpseLabel1);
                     foundIsColonist3 = true;
                     continue;
@@ -76,7 +76,7 @@ namespace AnomalyPatch.DeadGhoulsInColonistBar
                     yield return new CodeInstruction(OpCodes.Brtrue_S, addCorpseLabel2);
                     yield return new CodeInstruction(OpCodes.Ldloc_S, 7);
                     yield return new CodeInstruction(OpCodes.Callvirt, typeof(Corpse).Method("get_InnerPawn"));
-                    yield return new CodeInstruction(OpCodes.Callvirt, typeof(Pawn).Method("get_IsColonyMutant"));
+                    yield return new CodeInstruction(OpCodes.Call, typeof(PatchUtility_ColonistBar).Method(nameof(PatchUtility_ColonistBar.ShouldShowDeadGhoul)));
                     yield return new CodeInstruction(OpCodes.Brtrue_S, addCorpseLabel2);
                     foundIsColonist4 = true;
                     continue;
@@ -84,6 +84,14 @@ namespace AnomalyPatch.DeadGhoulsInColonistBar
 
                 yield return instruction;
             }
+        }
+    }
+
+    public static class PatchUtility_ColonistBar
+    {
+        public static bool ShouldShowDeadGhoul(Pawn p)
+        {
+            return AnomalyPatchSettings.DeadGhoulsInColonistBar && p.IsColonyMutant;
         }
     }
 }
