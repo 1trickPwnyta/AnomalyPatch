@@ -23,6 +23,7 @@
 	<AnomalyPatch_CreepJoinerLove>Allow creepjoiners to romance non-creepjoiners and vice versa</AnomalyPatch_CreepJoinerLove>
 	<AnomalyPatch_UnnaturalDarknessMapFix>Fix void provocation bug with unnatural darkness</AnomalyPatch_UnnaturalDarknessMapFix>
 	<AnomalyPatch_DeadGhoulsInColonistBar>Show dead ghouls in colonist bar</AnomalyPatch_DeadGhoulsInColonistBar>
+	<AnomalyPatch_DisableDisturbingVision>Disable disturbing vision letter</AnomalyPatch_DisableDisturbingVision>
 	<AnomalyPatch_SortBy>Sort by:</AnomalyPatch_SortBy>
 	<AnomalyPatch_Reverse>Reverse</AnomalyPatch_Reverse>
 	<AnomalyPatch_Age>Age</AnomalyPatch_Age>

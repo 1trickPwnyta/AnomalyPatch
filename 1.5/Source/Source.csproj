@@ -76,6 +76,7 @@
     <Compile Include="Debug.cs" />
     <Compile Include="AnomalyPatchMod.cs" />
     <Compile Include="DevourerWaterAssaultFix\IncidentWorker_DevourerWaterAssaultFix.cs" />
+    <Compile Include="DisableDisturbingVision\Patch_Building_VoidMonolith.cs" />
     <Compile Include="DontBlockDoors\DontBlockDoorsUtility.cs" />
     <Compile Include="DontBlockDoors\Patch_Toils_Goto.cs" />
     <Compile Include="DontHideStats\Patch_StatDrawEntry.cs" />

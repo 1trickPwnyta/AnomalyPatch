@@ -27,6 +27,7 @@ namespace AnomalyPatch
         public static bool CreepJoinerLove = true;
         public static bool UnnaturalDarknessMapFix = true;
         public static bool DeadGhoulsInColonistBar = true;
+        public static bool DisableDisturbingVision = true;
 
         public static void DoSettingsWindowContents(Rect inRect)
         {
@@ -56,6 +57,7 @@ namespace AnomalyPatch
             listingStandard.CheckboxLabeled("AnomalyPatch_CreepJoinerLove".Translate(), ref CreepJoinerLove);
             listingStandard.CheckboxLabeled("AnomalyPatch_UnnaturalDarknessMapFix".Translate(), ref UnnaturalDarknessMapFix);
             listingStandard.CheckboxLabeled("AnomalyPatch_DeadGhoulsInColonistBar".Translate(), ref DeadGhoulsInColonistBar);
+            listingStandard.CheckboxLabeled("AnomalyPatch_DisableDisturbingVision".Translate(), ref DisableDisturbingVision);
 
             listingStandard.End();
         }
@@ -84,6 +86,7 @@ namespace AnomalyPatch
             Scribe_Values.Look(ref CreepJoinerLove, "CreepJoinerLove", true);
             Scribe_Values.Look(ref UnnaturalDarknessMapFix, "UnnaturalDarknessMapFix", true);
             Scribe_Values.Look(ref DeadGhoulsInColonistBar, "DeadGhoulsInColonistBar", true);
+            Scribe_Values.Look(ref DisableDisturbingVision, "DisableDisturbingVision", true);
         }
     }
 }
