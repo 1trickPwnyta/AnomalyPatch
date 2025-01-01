@@ -26,4 +26,17 @@ namespace AnomalyPatch.GhoulHunting
             }
         }
     }
+
+    [HarmonyPatch(typeof(FoodUtility))]
+    [HarmonyPatch(nameof(FoodUtility.IsAcceptablePreyFor))]
+    public static class Patch_FoodUtility_IsAcceptablePreyFor
+    {
+        public static void Postfix(Pawn predator, Pawn prey, ref bool __result)
+        {
+            if (__result && predator.IsGhoul && PawnUtility.GetManhunterOnDamageChance(prey.kindDef) > 0f)
+            {
+                __result = false;
+            }
+        }
+    }
 }
