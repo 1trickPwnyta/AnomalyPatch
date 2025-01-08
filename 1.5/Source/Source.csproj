@@ -72,6 +72,7 @@
     <Compile Include="CreepJoinerLove\PawnDefUtility.cs" />
     <Compile Include="DangerousActivityLevels\Patch_Alert_DangerousActivity.cs" />
     <Compile Include="DeadGhoulsInColonistBar\Patch_ColonistBar.cs" />
+    <Compile Include="DeadGhoulsInColonistBar\Patch_Pawn.cs" />
     <Compile Include="DeathPallResurrectionSound\Patch_GameCondition_DeathPall.cs" />
     <Compile Include="Debug.cs" />
     <Compile Include="AnomalyPatchMod.cs" />
