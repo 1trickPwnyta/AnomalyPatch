@@ -33,7 +33,7 @@ namespace AnomalyPatch.GhoulHunting
     {
         public static void Postfix(Pawn predator, Pawn prey, ref bool __result)
         {
-            if (__result && predator.IsGhoul && PawnUtility.GetManhunterOnDamageChance(prey.kindDef) > 0f)
+            if (__result && predator.IsGhoul && PawnUtility.GetManhunterOnDamageChance(prey.kindDef) > 0f && !prey.Downed)
             {
                 __result = false;
             }
