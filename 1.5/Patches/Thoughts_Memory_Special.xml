@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Patch>
+	<Operation Class="PatchOperationSequence">
+		<operations>
+			<li Class="PatchOperationConditional" MayRequire="Ludeon.RimWorld.Biotech">
+				<xpath>/Defs/ThoughtDef[defName="PregnancyTerminated"]/nullifyingHediffs</xpath>
+				<nomatch Class="AnomalyPatch.PatchOperationAddIf">
+					<xpath>/Defs/ThoughtDef[defName="PregnancyTerminated"]</xpath>
+					<value>
+						<nullifyingHediffs />
+					</value>
+					<setting>InhumanPregnancyAttitude</setting>
+				</nomatch>
+			</li>
+			<li Class="AnomalyPatch.PatchOperationAddIf" MayRequire="Ludeon.RimWorld.Biotech">
+				<xpath>/Defs/ThoughtDef[defName="PregnancyTerminated"]/nullifyingHediffs</xpath>
+				<value>
+					<li>Inhumanized</li>
+				</value>
+				<setting>InhumanPregnancyAttitude</setting>
+			</li>
+			<li Class="PatchOperationConditional" MayRequire="Ludeon.RimWorld.Biotech">
+				<xpath>/Defs/ThoughtDef[defName="PregnancyEnded"]/nullifyingHediffs</xpath>
+				<nomatch Class="AnomalyPatch.PatchOperationAddIf">
+					<xpath>/Defs/ThoughtDef[defName="PregnancyEnded"]</xpath>
+					<value>
+						<nullifyingHediffs />
+					</value>
+					<setting>InhumanPregnancyAttitude</setting>
+				</nomatch>
+			</li>
+			<li Class="AnomalyPatch.PatchOperationAddIf" MayRequire="Ludeon.RimWorld.Biotech">
+				<xpath>/Defs/ThoughtDef[defName="PregnancyEnded"]/nullifyingHediffs</xpath>
+				<value>
+					<li>Inhumanized</li>
+				</value>
+				<setting>InhumanPregnancyAttitude</setting>
+			</li>
+		</operations>
+	</Operation>
+</Patch>

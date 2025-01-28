@@ -28,6 +28,7 @@ namespace AnomalyPatch
         public static bool UnnaturalDarknessMapFix = true;
         public static bool DeadGhoulsInColonistBar = true;
         public static bool DisableDisturbingVision = true;
+        public static bool InhumanPregnancyAttitude = true;
 
         public static void DoSettingsWindowContents(Rect inRect)
         {
@@ -58,6 +59,7 @@ namespace AnomalyPatch
             listingStandard.CheckboxLabeled("AnomalyPatch_UnnaturalDarknessMapFix".Translate(), ref UnnaturalDarknessMapFix);
             listingStandard.CheckboxLabeled("AnomalyPatch_DeadGhoulsInColonistBar".Translate(), ref DeadGhoulsInColonistBar);
             listingStandard.CheckboxLabeled("AnomalyPatch_DisableDisturbingVision".Translate(), ref DisableDisturbingVision);
+            listingStandard.CheckboxLabeled("AnomalyPatch_InhumanPregnancyAttitude".Translate() + " " + "AnomalyPatch_RestartRequired".Translate(), ref InhumanPregnancyAttitude);
 
             listingStandard.End();
         }
@@ -87,6 +89,7 @@ namespace AnomalyPatch
             Scribe_Values.Look(ref UnnaturalDarknessMapFix, "UnnaturalDarknessMapFix", true);
             Scribe_Values.Look(ref DeadGhoulsInColonistBar, "DeadGhoulsInColonistBar", true);
             Scribe_Values.Look(ref DisableDisturbingVision, "DisableDisturbingVision", true);
+            Scribe_Values.Look(ref InhumanPregnancyAttitude, "InhumanPregnancyAttitude", true);
         }
     }
 }

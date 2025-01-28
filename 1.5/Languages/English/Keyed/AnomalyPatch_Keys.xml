@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <LanguageData>
+	<AnomalyPatch_RestartRequired>(requires restart)</AnomalyPatch_RestartRequired>
 	<AnomalyPatch_NoResearchSelected>No Anomaly research project active</AnomalyPatch_NoResearchSelected>
 	<AnomalyPatch_AtmosphericHeaterFactor>Disable "Need warm clothes" alert with atmospheric heater</AnomalyPatch_AtmosphericHeaterFactor>
 	<AnomalyPatch_BioferriteHarvesterMultipleSelection>Show total bioferrite contained with multiple harvesters selected</AnomalyPatch_BioferriteHarvesterMultipleSelection>
@@ -24,6 +25,7 @@
 	<AnomalyPatch_UnnaturalDarknessMapFix>Fix void provocation bug with unnatural darkness</AnomalyPatch_UnnaturalDarknessMapFix>
 	<AnomalyPatch_DeadGhoulsInColonistBar>Show ghouls in colonist bar even while being carried, dead, or in a caravan</AnomalyPatch_DeadGhoulsInColonistBar>
 	<AnomalyPatch_DisableDisturbingVision>Disable disturbing vision letter</AnomalyPatch_DisableDisturbingVision>
+	<AnomalyPatch_InhumanPregnancyAttitude>Inhumanized pawns don't care when their pregnancy is terminated</AnomalyPatch_InhumanPregnancyAttitude>
 	<AnomalyPatch_SortBy>Sort by:</AnomalyPatch_SortBy>
 	<AnomalyPatch_Reverse>Reverse</AnomalyPatch_Reverse>
 	<AnomalyPatch_Age>Age</AnomalyPatch_Age>
