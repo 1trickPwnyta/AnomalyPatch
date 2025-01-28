@@ -31,7 +31,7 @@ Full list of tweaks:
 - Holding platforms needed alert is disabled.
 - Creepjoiners and non-creepjoiners can now form romantic relationships with each other.
 - Bug fix: Void provocation rituals can spawn unnatural darkness on a different map from the one the ritual was performed on.
-- Carried ghouls and dead ghouls remain in the colonist bar until buried/destroyed, just like colonists do.
+- Carried ghouls and dead ghouls remain in the colonist bar until buried/destroyed, just like colonists do. Ghouls are also shown in the caravan colonist bar.
 - Disables "Disturbing vision" letter because it doesn't actually do anything other than remind you that the monolith exists.
 
 === Updates ===

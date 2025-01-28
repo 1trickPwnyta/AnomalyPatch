@@ -22,7 +22,7 @@
 	<AnomalyPatch_HoldingPlatformAlert>Disable holding platforms needed alert</AnomalyPatch_HoldingPlatformAlert>
 	<AnomalyPatch_CreepJoinerLove>Allow creepjoiners to romance non-creepjoiners and vice versa</AnomalyPatch_CreepJoinerLove>
 	<AnomalyPatch_UnnaturalDarknessMapFix>Fix void provocation bug with unnatural darkness</AnomalyPatch_UnnaturalDarknessMapFix>
-	<AnomalyPatch_DeadGhoulsInColonistBar>Show ghouls in colonist bar even while being carried or dead</AnomalyPatch_DeadGhoulsInColonistBar>
+	<AnomalyPatch_DeadGhoulsInColonistBar>Show ghouls in colonist bar even while being carried, dead, or in a caravan</AnomalyPatch_DeadGhoulsInColonistBar>
 	<AnomalyPatch_DisableDisturbingVision>Disable disturbing vision letter</AnomalyPatch_DisableDisturbingVision>
 	<AnomalyPatch_SortBy>Sort by:</AnomalyPatch_SortBy>
 	<AnomalyPatch_Reverse>Reverse</AnomalyPatch_Reverse>
