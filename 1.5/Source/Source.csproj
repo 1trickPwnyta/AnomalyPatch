@@ -102,6 +102,7 @@
     <Compile Include="RitualDialogSorting\Patch_PawnPsychicRitualRoleSelectionWidget.cs" />
     <Compile Include="RitualDialogSorting\Patch_PawnRoleSelectionWidgetBase.cs" />
     <Compile Include="RitualDialogSorting\RitualSortPropertyUtil.cs" />
+    <Compile Include="RitualTargetsDontNeedRescue\Patch_Alert_ColonistNeedsRescuing.cs" />
     <Compile Include="StopSuppression\Patch_JobDriver_ActivitySuppression.cs" />
     <Compile Include="StudyAndSuppressByDefault\Patch_CompStudiable.cs" />
     <Compile Include="StudyAndSuppressByDefault\Patch_UnnaturalCorpseTracker.cs" />

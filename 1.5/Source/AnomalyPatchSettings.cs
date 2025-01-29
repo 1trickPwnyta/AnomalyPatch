@@ -29,39 +29,49 @@ namespace AnomalyPatch
         public static bool DeadGhoulsInColonistBar = true;
         public static bool DisableDisturbingVision = true;
         public static bool InhumanPregnancyAttitude = true;
+        public static bool RitualTargetsDontNeedRescue = true;
+
+        private static Vector2 scrollPosition;
 
         public static void DoSettingsWindowContents(Rect inRect)
         {
+            float height = 25f;
+            Rect viewRect = new Rect(0f, 0f, inRect.width - 20f, (height + 2f) * 25);
+            Widgets.BeginScrollView(inRect, ref scrollPosition, viewRect);
+
             Listing_Standard listingStandard = new Listing_Standard();
 
-            listingStandard.Begin(inRect);
+            listingStandard.Begin(viewRect);
 
-            listingStandard.CheckboxLabeled("AnomalyPatch_AtmosphericHeaterFactor".Translate(), ref AtmosphericHeaterFactor);
-            listingStandard.CheckboxLabeled("AnomalyPatch_BioferriteHarvesterMultipleSelection".Translate(), ref BioferriteHarvesterMultipleSelection);
-            listingStandard.CheckboxLabeled("AnomalyPatch_CharacterHighlighting".Translate(), ref CharacterHighlighting);
-            listingStandard.CheckboxLabeled("AnomalyPatch_DangerousActivityLevels".Translate(), ref DangerousActivityLevels);
-            listingStandard.CheckboxLabeled("AnomalyPatch_DeathPallResurrectionSound".Translate(), ref DeathPallResurrectionSound);
-            listingStandard.CheckboxLabeled("AnomalyPatch_DevourerWaterAssaultFix".Translate(), ref DevourerWaterAssaultFix);
-            listingStandard.CheckboxLabeled("AnomalyPatch_DontBlockDoors".Translate(), ref DontBlockDoors);
-            listingStandard.CheckboxLabeled("AnomalyPatch_FoodPriority".Translate(), ref FoodPriority);
-            listingStandard.CheckboxLabeled("AnomalyPatch_GhoulHunting".Translate(), ref GhoulHunting);
-            listingStandard.CheckboxLabeled("AnomalyPatch_HorrorMusic".Translate(), ref HorrorMusic);
-            listingStandard.CheckboxLabeled("AnomalyPatch_LabyrinthClosing".Translate(), ref LabyrinthClosing);
-            listingStandard.CheckboxLabeled("AnomalyPatch_NoProjectNoStudy".Translate(), ref NoProjectNoStudy);
-            listingStandard.CheckboxLabeled("AnomalyPatch_PsychicRitualZoning".Translate(), ref PsychicRitualZoning);
-            listingStandard.CheckboxLabeled("AnomalyPatch_RitualDialogSorting".Translate(), ref RitualDialogSorting);
-            listingStandard.CheckboxLabeled("AnomalyPatch_StudyAndSuppressByDefault".Translate(), ref StudyAndSuppressByDefault);
-            listingStandard.CheckboxLabeled("AnomalyPatch_DontHideStats".Translate(), ref DontHideStats);
-            listingStandard.CheckboxLabeled("AnomalyPatch_ForbidMonolithCorpses".Translate(), ref ForbidMonolithCorpses);
-            listingStandard.CheckboxLabeled("AnomalyPatch_StopSuppression".Translate(), ref StopSuppression);
-            listingStandard.CheckboxLabeled("AnomalyPatch_HoldingPlatformAlert".Translate(), ref HoldingPlatformAlert);
-            listingStandard.CheckboxLabeled("AnomalyPatch_CreepJoinerLove".Translate(), ref CreepJoinerLove);
-            listingStandard.CheckboxLabeled("AnomalyPatch_UnnaturalDarknessMapFix".Translate(), ref UnnaturalDarknessMapFix);
-            listingStandard.CheckboxLabeled("AnomalyPatch_DeadGhoulsInColonistBar".Translate(), ref DeadGhoulsInColonistBar);
-            listingStandard.CheckboxLabeled("AnomalyPatch_DisableDisturbingVision".Translate(), ref DisableDisturbingVision);
-            listingStandard.CheckboxLabeled("AnomalyPatch_InhumanPregnancyAttitude".Translate() + " " + "AnomalyPatch_RestartRequired".Translate(), ref InhumanPregnancyAttitude);
+            listingStandard.CheckboxLabeled("AnomalyPatch_AtmosphericHeaterFactor".Translate(), ref AtmosphericHeaterFactor, null, height);
+            listingStandard.CheckboxLabeled("AnomalyPatch_BioferriteHarvesterMultipleSelection".Translate(), ref BioferriteHarvesterMultipleSelection, null, height);
+            listingStandard.CheckboxLabeled("AnomalyPatch_CharacterHighlighting".Translate(), ref CharacterHighlighting, null, height);
+            listingStandard.CheckboxLabeled("AnomalyPatch_DangerousActivityLevels".Translate(), ref DangerousActivityLevels, null, height);
+            listingStandard.CheckboxLabeled("AnomalyPatch_DeathPallResurrectionSound".Translate(), ref DeathPallResurrectionSound, null, height);
+            listingStandard.CheckboxLabeled("AnomalyPatch_DevourerWaterAssaultFix".Translate(), ref DevourerWaterAssaultFix, null, height);
+            listingStandard.CheckboxLabeled("AnomalyPatch_DontBlockDoors".Translate(), ref DontBlockDoors, null, height);
+            listingStandard.CheckboxLabeled("AnomalyPatch_FoodPriority".Translate(), ref FoodPriority, null, height);
+            listingStandard.CheckboxLabeled("AnomalyPatch_GhoulHunting".Translate(), ref GhoulHunting, null, height);
+            listingStandard.CheckboxLabeled("AnomalyPatch_HorrorMusic".Translate(), ref HorrorMusic, null, height);
+            listingStandard.CheckboxLabeled("AnomalyPatch_LabyrinthClosing".Translate(), ref LabyrinthClosing, null, height);
+            listingStandard.CheckboxLabeled("AnomalyPatch_NoProjectNoStudy".Translate(), ref NoProjectNoStudy, null, height);
+            listingStandard.CheckboxLabeled("AnomalyPatch_PsychicRitualZoning".Translate(), ref PsychicRitualZoning, null, height);
+            listingStandard.CheckboxLabeled("AnomalyPatch_RitualDialogSorting".Translate(), ref RitualDialogSorting, null, height);
+            listingStandard.CheckboxLabeled("AnomalyPatch_StudyAndSuppressByDefault".Translate(), ref StudyAndSuppressByDefault, null, height);
+            listingStandard.CheckboxLabeled("AnomalyPatch_DontHideStats".Translate(), ref DontHideStats, null, height);
+            listingStandard.CheckboxLabeled("AnomalyPatch_ForbidMonolithCorpses".Translate(), ref ForbidMonolithCorpses, null, height);
+            listingStandard.CheckboxLabeled("AnomalyPatch_StopSuppression".Translate(), ref StopSuppression, null, height);
+            listingStandard.CheckboxLabeled("AnomalyPatch_HoldingPlatformAlert".Translate(), ref HoldingPlatformAlert, null, height);
+            listingStandard.CheckboxLabeled("AnomalyPatch_CreepJoinerLove".Translate(), ref CreepJoinerLove, null, height);
+            listingStandard.CheckboxLabeled("AnomalyPatch_UnnaturalDarknessMapFix".Translate(), ref UnnaturalDarknessMapFix, null, height);
+            listingStandard.CheckboxLabeled("AnomalyPatch_DeadGhoulsInColonistBar".Translate(), ref DeadGhoulsInColonistBar, null, height);
+            listingStandard.CheckboxLabeled("AnomalyPatch_DisableDisturbingVision".Translate(), ref DisableDisturbingVision, null, height);
+            listingStandard.CheckboxLabeled("AnomalyPatch_InhumanPregnancyAttitude".Translate() + " " + "AnomalyPatch_RestartRequired".Translate(), ref InhumanPregnancyAttitude, null, height);
+            listingStandard.CheckboxLabeled("AnomalyPatch_RitualTargetsDontNeedRescue".Translate(), ref RitualTargetsDontNeedRescue, null, height);
 
             listingStandard.End();
+
+            Widgets.EndScrollView();
         }
 
         public override void ExposeData()
@@ -90,6 +100,7 @@ namespace AnomalyPatch
             Scribe_Values.Look(ref DeadGhoulsInColonistBar, "DeadGhoulsInColonistBar", true);
             Scribe_Values.Look(ref DisableDisturbingVision, "DisableDisturbingVision", true);
             Scribe_Values.Look(ref InhumanPregnancyAttitude, "InhumanPregnancyAttitude", true);
+            Scribe_Values.Look(ref RitualTargetsDontNeedRescue, "RitualTargetsDontNeedRescue", true);
         }
     }
 }

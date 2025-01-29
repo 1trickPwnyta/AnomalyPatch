@@ -33,6 +33,8 @@ Full list of tweaks:
 - Bug fix: Void provocation rituals can spawn unnatural darkness on a different map from the one the ritual was performed on.
 - Carried ghouls and dead ghouls remain in the colonist bar until buried/destroyed, just like colonists do. Ghouls are also shown in the caravan colonist bar.
 - Disables "Disturbing vision" letter because it doesn't actually do anything other than remind you that the monolith exists.
+- Prevents inhumanized pawns from having any personal feelings (mood bonuses/penalties) about their pregnancies
+- Suppresses the "Colonist needs rescue" alert for targets of psychic rituals
 
 === Updates ===
 01/28/2025: Show ghouls in the colonist bar any time a colonist would be, allow creepjoiners to love non-creepjoiners, fix unnatural darkness void provocation bug, disable disturbing visions, adjust ghoul hunting logic

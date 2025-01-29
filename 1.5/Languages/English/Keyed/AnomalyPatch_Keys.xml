@@ -26,6 +26,7 @@
 	<AnomalyPatch_DeadGhoulsInColonistBar>Show ghouls in colonist bar even while being carried, dead, or in a caravan</AnomalyPatch_DeadGhoulsInColonistBar>
 	<AnomalyPatch_DisableDisturbingVision>Disable disturbing vision letter</AnomalyPatch_DisableDisturbingVision>
 	<AnomalyPatch_InhumanPregnancyAttitude>Inhumanized pawns don't care when their pregnancy is terminated</AnomalyPatch_InhumanPregnancyAttitude>
+	<AnomalyPatch_RitualTargetsDontNeedRescue>Suppress "Colonist needs rescue" alert for psychic ritual targets</AnomalyPatch_RitualTargetsDontNeedRescue>
 	<AnomalyPatch_SortBy>Sort by:</AnomalyPatch_SortBy>
 	<AnomalyPatch_Reverse>Reverse</AnomalyPatch_Reverse>
 	<AnomalyPatch_Age>Age</AnomalyPatch_Age>
