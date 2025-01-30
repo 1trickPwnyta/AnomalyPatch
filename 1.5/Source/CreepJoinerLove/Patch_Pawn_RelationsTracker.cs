@@ -5,8 +5,7 @@ using System.Reflection.Emit;
 
 namespace AnomalyPatch.CreepJoinerLove
 {
-    [HarmonyPatch(typeof(Pawn_RelationsTracker))]
-    [HarmonyPatch(nameof(Pawn_RelationsTracker.SecondaryLovinChanceFactor))]
+    // Patched manually in mod constructor
     public static class Patch_Pawn_RelationsTracker
     {
         public static IEnumerable<CodeInstruction> Transpiler(IEnumerable<CodeInstruction> instructions)

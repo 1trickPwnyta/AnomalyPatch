@@ -35,6 +35,7 @@ Full list of tweaks:
 - Disables "Disturbing vision" letter because it doesn't actually do anything other than remind you that the monolith exists.
 
 === Updates ===
+01/29/2025: Fix incompatibility with Big and Small Framework
 01/28/2025: Show ghouls in the colonist bar any time a colonist would be, allow creepjoiners to love non-creepjoiners, fix unnatural darkness void provocation bug, disable disturbing visions, adjust ghoul hunting logic
 12/15/2024: Fix bug where archonexus structures are study-enabled by default
 10/10/2024: Remove friendly shambler in schedule tab bug fix (fixed in vanilla now)
