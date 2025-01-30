@@ -1,4 +1,5 @@
-﻿using UnityEngine;
+﻿using RimWorld;
+using UnityEngine;
 using Verse;
 
 namespace AnomalyPatch
@@ -36,7 +37,12 @@ namespace AnomalyPatch
         public static void DoSettingsWindowContents(Rect inRect)
         {
             float height = 25f;
-            Rect viewRect = new Rect(0f, 0f, inRect.width - 20f, (height + 2f) * 25);
+            int numSettings = 25;
+            if (AnomalyPatchMod.BigAndSmall)
+            {
+                numSettings--;
+            }
+            Rect viewRect = new Rect(0f, 0f, inRect.width - 20f, (height + 2f) * numSettings);
             Widgets.BeginScrollView(inRect, ref scrollPosition, viewRect);
 
             Listing_Standard listingStandard = new Listing_Standard();
@@ -62,7 +68,10 @@ namespace AnomalyPatch
             listingStandard.CheckboxLabeled("AnomalyPatch_ForbidMonolithCorpses".Translate(), ref ForbidMonolithCorpses, null, height);
             listingStandard.CheckboxLabeled("AnomalyPatch_StopSuppression".Translate(), ref StopSuppression, null, height);
             listingStandard.CheckboxLabeled("AnomalyPatch_HoldingPlatformAlert".Translate(), ref HoldingPlatformAlert, null, height);
-            listingStandard.CheckboxLabeled("AnomalyPatch_CreepJoinerLove".Translate(), ref CreepJoinerLove, null, height);
+            if (!AnomalyPatchMod.BigAndSmall)
+            {
+                listingStandard.CheckboxLabeled("AnomalyPatch_CreepJoinerLove".Translate(), ref CreepJoinerLove);
+            }
             listingStandard.CheckboxLabeled("AnomalyPatch_UnnaturalDarknessMapFix".Translate(), ref UnnaturalDarknessMapFix, null, height);
             listingStandard.CheckboxLabeled("AnomalyPatch_DeadGhoulsInColonistBar".Translate(), ref DeadGhoulsInColonistBar, null, height);
             listingStandard.CheckboxLabeled("AnomalyPatch_DisableDisturbingVision".Translate(), ref DisableDisturbingVision, null, height);
