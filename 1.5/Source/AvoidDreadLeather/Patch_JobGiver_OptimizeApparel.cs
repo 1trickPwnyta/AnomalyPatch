@@ -43,13 +43,10 @@ namespace AnomalyPatch.AvoidDreadLeather
     {
         public static void ModifyApparelScore(ref float score, Pawn pawn, Apparel ap)
         {
-            Debug.Log("modify");
             if (AnomalyPatchSettings.AvoidDreadLeather && ap.Stuff == ThingDefOf.Leather_Dread)
             {
-                Debug.Log("dread");
                 if (pawn == null || ThoughtUtility.CanGetThought(pawn, DefDatabase<ThoughtDef>.GetNamed("WearingDreadLeather"), true))
                 {
-                    Debug.Log("thought");
                     score -= 0.5f;
                     if (score > 0f)
                     {
