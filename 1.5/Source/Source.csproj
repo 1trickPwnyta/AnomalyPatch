@@ -65,6 +65,7 @@
     <Compile Include="AnomalyPatchSettings.cs" />
     <Compile Include="AtmosphericHeaterFactor\AtmosphericHeaterUtility.cs" />
     <Compile Include="AtmosphericHeaterFactor\Patch_Alert_NeedWarmClothes.cs" />
+    <Compile Include="AvoidDreadLeather\Patch_JobGiver_OptimizeApparel.cs" />
     <Compile Include="BioferriteHarvesterMultipleSelection\InspectPaneUtility.cs" />
     <Compile Include="BioferriteHarvesterMultipleSelection\Patch_MainTabWindow_Inspect.cs" />
     <Compile Include="CharacterHighlighting\Patch_SilhouetteUtility.cs" />

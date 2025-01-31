@@ -35,6 +35,7 @@ Full list of tweaks:
 - Disables "Disturbing vision" letter because it doesn't actually do anything other than remind you that the monolith exists.
 - Prevents inhumanized pawns from having any personal feelings (mood bonuses/penalties) about their pregnancies
 - Suppresses the "Colonist needs rescue" alert for targets of psychic rituals
+- Pawns will avoid wearing dread leather if they don't like it
 
 === Updates ===
 01/29/2025: Fix incompatibility with Big and Small Framework

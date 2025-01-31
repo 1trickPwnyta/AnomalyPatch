@@ -31,13 +31,14 @@ namespace AnomalyPatch
         public static bool DisableDisturbingVision = true;
         public static bool InhumanPregnancyAttitude = true;
         public static bool RitualTargetsDontNeedRescue = true;
+        public static bool AvoidDreadLeather = true;
 
         private static Vector2 scrollPosition;
 
         public static void DoSettingsWindowContents(Rect inRect)
         {
             float height = 25f;
-            int numSettings = 25;
+            int numSettings = 26;
             if (AnomalyPatchMod.BigAndSmall)
             {
                 numSettings--;
@@ -77,6 +78,7 @@ namespace AnomalyPatch
             listingStandard.CheckboxLabeled("AnomalyPatch_DisableDisturbingVision".Translate(), ref DisableDisturbingVision, null, height);
             listingStandard.CheckboxLabeled("AnomalyPatch_InhumanPregnancyAttitude".Translate() + " " + "AnomalyPatch_RestartRequired".Translate(), ref InhumanPregnancyAttitude, null, height);
             listingStandard.CheckboxLabeled("AnomalyPatch_RitualTargetsDontNeedRescue".Translate(), ref RitualTargetsDontNeedRescue, null, height);
+            listingStandard.CheckboxLabeled("AnomalyPatch_AvoidDreadLeather".Translate(), ref AvoidDreadLeather, null, height);
 
             listingStandard.End();
 
@@ -110,6 +112,7 @@ namespace AnomalyPatch
             Scribe_Values.Look(ref DisableDisturbingVision, "DisableDisturbingVision", true);
             Scribe_Values.Look(ref InhumanPregnancyAttitude, "InhumanPregnancyAttitude", true);
             Scribe_Values.Look(ref RitualTargetsDontNeedRescue, "RitualTargetsDontNeedRescue", true);
+            Scribe_Values.Look(ref AvoidDreadLeather, "AvoidDreadLeather", true);
         }
     }
 }
