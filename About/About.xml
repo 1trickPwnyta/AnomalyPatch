@@ -3,6 +3,7 @@
 	<name>1trickPwnyta's Anomaly Patch</name>
 	<author>1trickPwnyta</author>
 	<packageId>anomalypatch.1trickPwnyta</packageId>
+	<modVersion>1.4.0</modVersion>
 	<supportedVersions>
 		<li>1.5</li>
 	</supportedVersions>
@@ -39,6 +40,7 @@ Full list of tweaks:
 - Bug fix: Female creepjoiners use male body type
 
 === Updates ===
+03/12/2025: Add a few new tweaks, make creepjoiner love feature require restart when changing to deal with mod compatibility issues
 01/29/2025: Fix incompatibility with Big and Small Framework
 01/28/2025: Show ghouls in the colonist bar any time a colonist would be, allow creepjoiners to love non-creepjoiners, fix unnatural darkness void provocation bug, disable disturbing visions, adjust ghoul hunting logic
 12/15/2024: Fix bug where archonexus structures are study-enabled by default
