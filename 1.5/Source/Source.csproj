@@ -97,6 +97,8 @@
     <Compile Include="NoProjectNoStudy\Patch_WorkGiver_DarkStudyInteract.cs" />
     <Compile Include="NoProjectNoStudy\StudyUtility.cs" />
     <Compile Include="PatchOperationAddIf.cs" />
+    <Compile Include="PatchOperationRemoveIf.cs" />
+    <Compile Include="PatchOperationReplaceIf.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="PsychicRitualZoning\LordUtility.cs" />
     <Compile Include="PsychicRitualZoning\Patch_Pawn_PlayerSettings.cs" />

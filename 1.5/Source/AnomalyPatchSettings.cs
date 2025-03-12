@@ -32,13 +32,14 @@ namespace AnomalyPatch
         public static bool InhumanPregnancyAttitude = true;
         public static bool RitualTargetsDontNeedRescue = true;
         public static bool AvoidDreadLeather = true;
+        public static bool CreepjoinerBodyTypeFix = true;
 
         private static Vector2 scrollPosition;
 
         public static void DoSettingsWindowContents(Rect inRect)
         {
             float height = 25f;
-            int numSettings = 26;
+            int numSettings = 27;
             if (AnomalyPatchMod.BigAndSmall)
             {
                 numSettings--;
@@ -71,7 +72,7 @@ namespace AnomalyPatch
             listingStandard.CheckboxLabeled("AnomalyPatch_HoldingPlatformAlert".Translate(), ref HoldingPlatformAlert, null, height);
             if (!AnomalyPatchMod.BigAndSmall)
             {
-                listingStandard.CheckboxLabeled("AnomalyPatch_CreepJoinerLove".Translate(), ref CreepJoinerLove);
+                listingStandard.CheckboxLabeled("AnomalyPatch_CreepJoinerLove".Translate() + " " + "AnomalyPatch_RestartRequired".Translate(), ref CreepJoinerLove);
             }
             listingStandard.CheckboxLabeled("AnomalyPatch_UnnaturalDarknessMapFix".Translate(), ref UnnaturalDarknessMapFix, null, height);
             listingStandard.CheckboxLabeled("AnomalyPatch_DeadGhoulsInColonistBar".Translate(), ref DeadGhoulsInColonistBar, null, height);
@@ -79,6 +80,7 @@ namespace AnomalyPatch
             listingStandard.CheckboxLabeled("AnomalyPatch_InhumanPregnancyAttitude".Translate() + " " + "AnomalyPatch_RestartRequired".Translate(), ref InhumanPregnancyAttitude, null, height);
             listingStandard.CheckboxLabeled("AnomalyPatch_RitualTargetsDontNeedRescue".Translate(), ref RitualTargetsDontNeedRescue, null, height);
             listingStandard.CheckboxLabeled("AnomalyPatch_AvoidDreadLeather".Translate(), ref AvoidDreadLeather, null, height);
+            listingStandard.CheckboxLabeled("AnomalyPatch_CreepjoinerBodyTypeFix".Translate() + " " + "AnomalyPatch_RestartRequired".Translate(), ref CreepjoinerBodyTypeFix, null, height);
 
             listingStandard.End();
 
@@ -113,6 +115,7 @@ namespace AnomalyPatch
             Scribe_Values.Look(ref InhumanPregnancyAttitude, "InhumanPregnancyAttitude", true);
             Scribe_Values.Look(ref RitualTargetsDontNeedRescue, "RitualTargetsDontNeedRescue", true);
             Scribe_Values.Look(ref AvoidDreadLeather, "AvoidDreadLeather", true);
+            Scribe_Values.Look(ref CreepjoinerBodyTypeFix, "CreepjoinerBodyTypeFix", true);
         }
     }
 }

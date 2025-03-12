@@ -36,6 +36,7 @@ Full list of tweaks:
 - Prevents inhumanized pawns from having any personal feelings (mood bonuses/penalties) about their pregnancies
 - Suppresses the "Colonist needs rescue" alert for targets of psychic rituals
 - Pawns will avoid wearing dread leather if they don't like it
+- Bug fix: Female creepjoiners use male body type
 
 === Updates ===
 01/29/2025: Fix incompatibility with Big and Small Framework

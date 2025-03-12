@@ -20,17 +20,17 @@ namespace AnomalyPatch
 
         public AnomalyPatchMod(ModContentPack content) : base(content)
         {
+            Settings = GetSettings<AnomalyPatchSettings>();
+
             var harmony = new Harmony(PACKAGE_ID);
             harmony.PatchAll();
             harmony.Patch(typeof(CompActivity).GetConstructor(new Type[] { }), null, typeof(StudyAndSuppressByDefault.Patch_CompActivity_ctor).GetMethod("Postfix"));
             harmony.Patch(typeof(JobDriver_ActivitySuppression).GetNestedType("<>c__DisplayClass9_0", BindingFlags.NonPublic).Method("<TrySuppress>b__1"), null, null, typeof(StopSuppression.Patch_JobDriver_ActivitySuppression).Method(nameof(StopSuppression.Patch_JobDriver_ActivitySuppression.Transpiler)));
             harmony.Patch(typeof(PawnPsychicRitualRoleSelectionWidget).GetConstructor(new[] { typeof(PsychicRitualDef), typeof(PsychicRitualCandidatePool), typeof(PsychicRitualRoleAssignments) }), null, typeof(RitualDialogSorting.Patch_PawnPsychicRitualRoleSelectionWidget).GetMethod("Postfix"));
-            if (!BigAndSmall)
+            if (!BigAndSmall && AnomalyPatchSettings.CreepJoinerLove)
             {
                 harmony.Patch(typeof(Pawn_RelationsTracker).Method(nameof(Pawn_RelationsTracker.SecondaryLovinChanceFactor)), null, null, typeof(Patch_Pawn_RelationsTracker).Method(nameof(Patch_Pawn_RelationsTracker.Transpiler)));
             }
-
-            Settings = GetSettings<AnomalyPatchSettings>();
 
             Log.Message($"[{PACKAGE_NAME}] Loaded.");
         }
