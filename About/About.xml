@@ -3,43 +3,53 @@
 	<name>1trickPwnyta's Anomaly Patch</name>
 	<author>1trickPwnyta</author>
 	<packageId>anomalypatch.1trickPwnyta</packageId>
-	<modVersion>1.4.0</modVersion>
+	<modVersion>1.4.1</modVersion>
 	<supportedVersions>
 		<li>1.5</li>
+		<li>1.6</li>
 	</supportedVersions>
 	<description>
-This mod makes a handful of small tweaks to the Anomaly DLC that are intended to make the game a bit more enjoyable without changing the gameplay too much.
+This mod makes a handful of small tweaks to the Anomaly DLC that are intended to make the game a bit more enjoyable without changing the gameplay too much. Each tweak can be toggled on or off in the mod settings.
 
-Full list of tweaks:
-- Selecting multiple bioferrite harvesters shows the total amount of bioferrite contained (and increase per day) in all of them
+=Anomaly incidents=
+- Pawn silhouettes (when zoomed out) are no longer hidden in unnatural darkness.
+- Death pall resurrection messages no longer make a noise so you won't get inundated with beeps during death palls. Don't worry - you'll still see the message, and you'll still hear the gross corpsey sound of them resurrecting nearby.
 - Pit gates don't cause horror music to play unless you go into them, and horror music stops when you leave, and enemies in the undercave don't cause combat music to play unless you're in there with them, and combat music stops when you leave.
-- Bug fix: Void provocation rituals can spawn devourer water assaults on maps with no valid water to spawn from, resulting in the ritual doing nothing
+- When returning from the labyrinth created by a warped obelisk, any items transferred to your home map will be set to forbidden unless they appear in the home zone.
+
+=Study, suppression, and containment=
 - Enables study and suppression of entities, including non-living entities such as obelisks, by default
 - Pawns will not study entities if no Anomaly research project is active and studying the entity provides no other benefits (like learning about obelisks or how to destroy the golden cube)
-- Caravan dialog food auto selection prioritizes twisted meat for ghouls and carniverous animals, then human/insect meat, then other meat.
-- Ghouls can hunt prey just like your animals can.
-- When returning from the labyrinth created by a warped obelisk, any items transferred to your home map will be set to forbidden unless they appear in the home zone.
-- When multiple obelisks reach dangerous (90%) activity levels, the alert on the right side of the screen will show the highest activity level instead of showing no acitivty level.
-- When working, colonists will try to find a spot to stand in that doesn't hold a containment cell or prison door open if possible. This way they won't compromise entity containment while building flooring etc. in a containment cell or allow a prisoner to escape.
-- The "need warm clothes" alert on the right side of the screen won't show up if you have a powered and fueled atmospheric heater.
-- Pawn silhouettes (when zoomed out) are no longer hidden in unnatural darkness.
-- Colonists will adhere to zone restrictions while gathering offerings for psychic rituals and while moving to the psychic ritual spot.
-- Death pall resurrection messages no longer make a noise so you won't get inundated with beeps during death palls. Don't worry - you'll still see the message, and you'll still hear the gross corpsey sound of them resurrecting nearby.
-- Certain entity stats are no longer hidden (nociosphere, metalhorror, revenant).
-- The psychic ritual dialog sorts pawns by psychic sensitivity or by age, at your option.
-- Corpses initially spawned around the void monolith are forbidden by default.
 - Colonists are no longer forced to finish suppressing obelisks in order to take breaks (useful for pawns with lower psychic sensitivity).
+- When multiple obelisks reach dangerous (90%) activity levels, the alert on the right side of the screen will show the highest activity level instead of showing no acitivty level.
+- Selecting multiple bioferrite harvesters shows the total amount of bioferrite contained (and increase per day) in all of them
+- When working, colonists will try to find a spot to stand in that doesn't hold a containment cell or prison door open if possible. This way they won't compromise entity containment while building flooring etc. in a containment cell or allow a prisoner to escape.
 - Holding platforms needed alert is disabled.
-- Creepjoiners and non-creepjoiners can now form romantic relationships with each other.
-- Bug fix: Void provocation rituals can spawn unnatural darkness on a different map from the one the ritual was performed on.
-- Carried ghouls and dead ghouls remain in the colonist bar until buried/destroyed, just like colonists do. Ghouls are also shown in the caravan colonist bar.
-- Disables "Disturbing vision" letter because it doesn't actually do anything other than remind you that the monolith exists.
-- Prevents inhumanized pawns from having any personal feelings (mood bonuses/penalties) about their pregnancies
+
+=Psychic rituals=
+- The psychic ritual dialog sorts pawns by psychic sensitivity or by age, at your option.
+- Colonists will adhere to zone restrictions while gathering offerings for psychic rituals and while moving to the psychic ritual spot.
 - Suppresses the "Colonist needs rescue" alert for targets of psychic rituals
-- Pawns will avoid wearing dread leather if they don't like it
+- Bug fix: Void provocation rituals can spawn devourer water assaults on maps with no valid water to spawn from, resulting in the ritual doing nothing
+- Bug fix: Void provocation rituals can spawn unnatural darkness on a different map from the one the ritual was performed on.
+
+=Dark entities=
+- Corpses initially spawned around the void monolith are forbidden by default.
+- Disables "Disturbing vision" letter because it doesn't actually do anything other than remind you that the monolith exists.
+- Certain entity stats are no longer hidden (nociosphere, metalhorror, revenant).
+- Ghouls can hunt prey just like your animals can.
+- Caravan dialog food auto selection prioritizes twisted meat for ghouls and carniverous animals, then human/insect meat, then other meat.
+- Dead ghouls remain in the colonist bar until buried/destroyed, just like colonists do. Ghouls are also shown in the caravan colonist bar.
+- Creepjoiners and non-creepjoiners can now form romantic relationships with each other.
 - Bug fix: Female creepjoiners use male body type
 
+=Miscellaneous=
+- The "need warm clothes" alert on the right side of the screen won't show up if you have a powered and fueled atmospheric heater.
+- Prevents inhumanized pawns from having any personal feelings (mood bonuses/penalties) about their pregnancies
+- Pawns will avoid wearing dread leather if they don't like it
+
 === Updates ===
+06/12/2025: Updated to 1.6, updated settings UI
 03/12/2025: Add a few new tweaks, make creepjoiner love feature require restart when changing to deal with mod compatibility issues
 01/29/2025: Fix incompatibility with Big and Small Framework
 01/28/2025: Show ghouls in the colonist bar any time a colonist would be, allow creepjoiners to love non-creepjoiners, fix unnatural darkness void provocation bug, disable disturbing visions, adjust ghoul hunting logic
