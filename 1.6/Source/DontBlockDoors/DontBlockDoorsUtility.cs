@@ -30,6 +30,8 @@ namespace AnomalyPatch.DontBlockDoors
             return false;
         }
 
+        public static bool IsInContainmentOrPrisonDoorway(this Pawn pawn) => pawn.Position.GetRegion(pawn.Map)?.IsContainmentOrPrisonDoorway() ?? false;
+
         public static void GotoBestCell(LocalTargetInfo target, Pawn actor, PathEndMode peMode)
         {
             IEnumerable<IntVec3> adjacentCells;

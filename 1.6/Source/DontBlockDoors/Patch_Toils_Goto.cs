@@ -1,8 +1,10 @@
 ﻿using HarmonyLib;
-using RimWorld;
+using System.Collections.Generic;
+using System.Linq;
+using System.Reflection;
+using System.Reflection.Emit;
 using Verse;
 using Verse.AI;
-using static UnityEngine.GraphicsBuffer;
 
 namespace AnomalyPatch.DontBlockDoors
 {
@@ -77,6 +79,34 @@ namespace AnomalyPatch.DontBlockDoors
                     DontBlockDoorsUtility.GotoBestCell(cell, actor, peMode);
                 };
             }
+        }
+    }
+
+    [HarmonyPatch]
+    public static class PatchTargeted_Toils_Goto_GotoBuild_tickIntervalAction
+    {
+        public static IEnumerable<MethodBase> TargetMethods()
+        {
+            yield return typeof(Toils_Goto).GetNestedType("<>c__DisplayClass6_0", BindingFlags.NonPublic).Method("<GotoBuild>b__1");
+        }
+
+        public static IEnumerable<CodeInstruction> Transpiler(IEnumerable<CodeInstruction> instructions)
+        {
+            List<CodeInstruction> instructionsList = instructions.ToList();
+            CodeInstruction brFalse = instructionsList.FindLast(i => i.opcode == OpCodes.Brfalse_S);
+            int index = instructionsList.IndexOf(brFalse);
+            instructionsList.InsertRange(index + 1, new[]
+            {
+                new CodeInstruction(OpCodes.Ldloc_0),
+                new CodeInstruction(OpCodes.Call, typeof(DontBlockDoorsUtility).Method(nameof(DontBlockDoorsUtility.IsInContainmentOrPrisonDoorway))),
+                new CodeInstruction(OpCodes.Brtrue_S, brFalse.operand),
+                new CodeInstruction(OpCodes.Ldloc_0),
+                new CodeInstruction(OpCodes.Callvirt, typeof(Thing).PropertyGetter(nameof(Thing.Position))),
+                new CodeInstruction(OpCodes.Ldloc_2),
+                new CodeInstruction(OpCodes.Call, typeof(GenAdj).Method(nameof(GenAdj.IsInside), new[] { typeof(IntVec3), typeof(Thing) })),
+                new CodeInstruction(OpCodes.Brtrue_S, brFalse.operand)
+            });
+            return instructionsList;
         }
     }
 }
