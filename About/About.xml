@@ -3,7 +3,7 @@
 	<name>1trickPwnyta's Anomaly Patch</name>
 	<author>1trickPwnyta</author>
 	<packageId>anomalypatch.1trickPwnyta</packageId>
-	<modVersion>1.4.1</modVersion>
+	<modVersion>1.4.2</modVersion>
 	<supportedVersions>
 		<li>1.5</li>
 		<li>1.6</li>
@@ -49,6 +49,7 @@ This mod makes a handful of small tweaks to the Anomaly DLC that are intended to
 - Pawns will avoid wearing dread leather if they don't like it
 
 === Updates ===
+08/08/2025: Fixed bugs with containment/prison door feature.
 06/12/2025: Updated to 1.6, updated settings UI
 03/12/2025: Add a few new tweaks, make creepjoiner love feature require restart when changing to deal with mod compatibility issues
 01/29/2025: Fix incompatibility with Big and Small Framework
