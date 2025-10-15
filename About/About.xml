@@ -3,7 +3,7 @@
 	<name>1trickPwnyta's Anomaly Patch</name>
 	<author>1trickPwnyta</author>
 	<packageId>anomalypatch.1trickPwnyta</packageId>
-	<modVersion>1.4.2</modVersion>
+	<modVersion>1.4.3</modVersion>
 	<supportedVersions>
 		<li>1.5</li>
 		<li>1.6</li>
@@ -16,6 +16,7 @@ This mod makes a handful of small tweaks to the Anomaly DLC that are intended to
 - Death pall resurrection messages no longer make a noise so you won't get inundated with beeps during death palls. Don't worry - you'll still see the message, and you'll still hear the gross corpsey sound of them resurrecting nearby.
 - Pit gates don't cause horror music to play unless you go into them, and horror music stops when you leave, and enemies in the undercave don't cause combat music to play unless you're in there with them, and combat music stops when you leave.
 - When returning from the labyrinth created by a warped obelisk, any items transferred to your home map will be set to forbidden unless they appear in the home zone.
+- Bug fix: Certain Anomaly incidents (Unnatural darkness, Sightstealer arrival) can spawn on a different colony map than the one whose wealth was used to generate their threat points.
 
 =Study, suppression, and containment=
 - Enables study and suppression of entities, including non-living entities such as obelisks, by default
@@ -31,7 +32,6 @@ This mod makes a handful of small tweaks to the Anomaly DLC that are intended to
 - Colonists will adhere to zone restrictions while gathering offerings for psychic rituals and while moving to the psychic ritual spot.
 - Suppresses the "Colonist needs rescue" alert for targets of psychic rituals
 - Bug fix: Void provocation rituals can spawn devourer water assaults on maps with no valid water to spawn from, resulting in the ritual doing nothing
-- Bug fix: Void provocation rituals can spawn unnatural darkness on a different map from the one the ritual was performed on.
 
 =Dark entities=
 - Corpses initially spawned around the void monolith are forbidden by default.
@@ -49,6 +49,7 @@ This mod makes a handful of small tweaks to the Anomaly DLC that are intended to
 - Pawns will avoid wearing dread leather if they don't like it
 
 === Updates ===
+10/14/2025: Add Sightstealer arrival event to bug fix for incidents spawning on the wrong map
 08/08/2025: Fixed bugs with containment/prison door feature.
 06/12/2025: Updated to 1.6, updated settings UI
 03/12/2025: Add a few new tweaks, make creepjoiner love feature require restart when changing to deal with mod compatibility issues

@@ -26,13 +26,14 @@ namespace AnomalyPatch
         public static bool StopSuppression = true;
         public static bool HoldingPlatformAlert = true;
         public static bool CreepJoinerLove = true;
-        public static bool UnnaturalDarknessMapFix = true;
+        public static bool QuestIncidentMapFix = true;
         public static bool DeadGhoulsInColonistBar = true;
         public static bool DisableDisturbingVision = true;
         public static bool InhumanPregnancyAttitude = true;
         public static bool RitualTargetsDontNeedRescue = true;
         public static bool AvoidDreadLeather = true;
         public static bool CreepjoinerBodyTypeFix = true;
+        public static bool SightstealerArrivalMapFix = true;
 
         private static Vector2 scrollPosition;
         private static float y;
@@ -50,6 +51,7 @@ namespace AnomalyPatch
             listing.CheckboxLabeled("AnomalyPatch_DeathPallResurrectionSound".Translate(), ref DeathPallResurrectionSound);
             listing.CheckboxLabeled("AnomalyPatch_HorrorMusic".Translate(), ref HorrorMusic);
             listing.CheckboxLabeled("AnomalyPatch_LabyrinthClosing".Translate(), ref LabyrinthClosing);
+            listing.CheckboxLabeled("AnomalyPatch_UnnaturalDarknessMapFix".Translate(), ref QuestIncidentMapFix);
 
             listing.Gap();
 
@@ -69,7 +71,6 @@ namespace AnomalyPatch
             listing.CheckboxLabeled("AnomalyPatch_PsychicRitualZoning".Translate(), ref PsychicRitualZoning);
             listing.CheckboxLabeled("AnomalyPatch_RitualTargetsDontNeedRescue".Translate(), ref RitualTargetsDontNeedRescue);
             listing.CheckboxLabeled("AnomalyPatch_DevourerWaterAssaultFix".Translate(), ref DevourerWaterAssaultFix);
-            listing.CheckboxLabeled("AnomalyPatch_UnnaturalDarknessMapFix".Translate(), ref UnnaturalDarknessMapFix);
 
             listing.Gap();
 
@@ -130,7 +131,7 @@ namespace AnomalyPatch
             Scribe_Values.Look(ref StopSuppression, "StopSuppression", true);
             Scribe_Values.Look(ref HoldingPlatformAlert, "HoldingPlatformAlert", true);
             Scribe_Values.Look(ref CreepJoinerLove, "CreepJoinerLove", true);
-            Scribe_Values.Look(ref UnnaturalDarknessMapFix, "UnnaturalDarknessMapFix", true);
+            Scribe_Values.Look(ref QuestIncidentMapFix, "UnnaturalDarknessMapFix", true);
             Scribe_Values.Look(ref DeadGhoulsInColonistBar, "DeadGhoulsInColonistBar", true);
             Scribe_Values.Look(ref DisableDisturbingVision, "DisableDisturbingVision", true);
             Scribe_Values.Look(ref InhumanPregnancyAttitude, "InhumanPregnancyAttitude", true);

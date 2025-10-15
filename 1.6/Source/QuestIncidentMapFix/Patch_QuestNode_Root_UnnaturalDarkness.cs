@@ -5,7 +5,7 @@ using System.Reflection;
 using System.Reflection.Emit;
 using Verse;
 
-namespace AnomalyPatch.UnnaturalDarknessMapFix
+namespace AnomalyPatch.QuestIncidentMapFix
 {
     [HarmonyPatch(typeof(QuestNode_Root_UnnaturalDarkness))]
     [HarmonyPatch("TestRunInt")]
