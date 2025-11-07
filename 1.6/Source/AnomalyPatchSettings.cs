@@ -34,6 +34,7 @@ namespace AnomalyPatch
         public static bool AvoidDreadLeather = true;
         public static bool CreepjoinerBodyTypeFix = true;
         public static bool SightstealerArrivalMapFix = true;
+        public static bool DontBlockPrisonDoors = true;
 
         private static Vector2 scrollPosition;
         private static float y;
@@ -42,61 +43,57 @@ namespace AnomalyPatch
         {
             Rect viewRect = new Rect(0f, 0f, inRect.width - 20f, y);
             Widgets.BeginScrollView(inRect, ref scrollPosition, viewRect);
-
             Listing_Standard listing = new Listing_Standard() { maxOneColumn = true };
             listing.Begin(viewRect);
 
             DoHeader(listing, "AnomalyPatch_Incidents");
-            listing.CheckboxLabeled("AnomalyPatch_CharacterHighlighting".Translate(), ref CharacterHighlighting);
-            listing.CheckboxLabeled("AnomalyPatch_DeathPallResurrectionSound".Translate(), ref DeathPallResurrectionSound);
-            listing.CheckboxLabeled("AnomalyPatch_HorrorMusic".Translate(), ref HorrorMusic);
-            listing.CheckboxLabeled("AnomalyPatch_LabyrinthClosing".Translate(), ref LabyrinthClosing);
-            listing.CheckboxLabeled("AnomalyPatch_UnnaturalDarknessMapFix".Translate(), ref QuestIncidentMapFix);
+            DoSetting(listing, "AnomalyPatch_CharacterHighlighting", ref CharacterHighlighting);
+            DoSetting(listing, "AnomalyPatch_DeathPallResurrectionSound", ref DeathPallResurrectionSound);
+            DoSetting(listing, "AnomalyPatch_HorrorMusic", ref HorrorMusic);
+            DoSetting(listing, "AnomalyPatch_LabyrinthClosing", ref LabyrinthClosing);
+            DoSetting(listing, "AnomalyPatch_UnnaturalDarknessMapFix", ref QuestIncidentMapFix, bugFix: true);
 
             listing.Gap();
 
             DoHeader(listing, "AnomalyPatch_Study");
-            listing.CheckboxLabeled("AnomalyPatch_StudyAndSuppressByDefault".Translate(), ref StudyAndSuppressByDefault);
-            listing.CheckboxLabeled("AnomalyPatch_NoProjectNoStudy".Translate(), ref NoProjectNoStudy);
-            listing.CheckboxLabeled("AnomalyPatch_StopSuppression".Translate(), ref StopSuppression);
-            listing.CheckboxLabeled("AnomalyPatch_DangerousActivityLevels".Translate(), ref DangerousActivityLevels);
-            listing.CheckboxLabeled("AnomalyPatch_BioferriteHarvesterMultipleSelection".Translate(), ref BioferriteHarvesterMultipleSelection);
-            listing.CheckboxLabeled("AnomalyPatch_DontBlockDoors".Translate(), ref DontBlockDoors);
-            listing.CheckboxLabeled("AnomalyPatch_HoldingPlatformAlert".Translate(), ref HoldingPlatformAlert);
+            DoSetting(listing, "AnomalyPatch_StudyAndSuppressByDefault", ref StudyAndSuppressByDefault);
+            DoSetting(listing, "AnomalyPatch_NoProjectNoStudy", ref NoProjectNoStudy);
+            DoSetting(listing, "AnomalyPatch_StopSuppression", ref StopSuppression);
+            DoSetting(listing, "AnomalyPatch_DangerousActivityLevels", ref DangerousActivityLevels);
+            DoSetting(listing, "AnomalyPatch_BioferriteHarvesterMultipleSelection", ref BioferriteHarvesterMultipleSelection);
+            DoSetting(listing, "AnomalyPatch_DontBlockDoors", ref DontBlockDoors);
+            DoSetting(listing, "AnomalyPatch_DontBlockPrisonDoors", ref DontBlockPrisonDoors, dependsOn: DontBlockDoors, indentLevel: 1);
+            DoSetting(listing, "AnomalyPatch_HoldingPlatformAlert", ref HoldingPlatformAlert);
 
             listing.Gap();
 
             DoHeader(listing, "AnomalyPatch_Rituals");
-            listing.CheckboxLabeled("AnomalyPatch_RitualDialogSorting".Translate(), ref RitualDialogSorting);
-            listing.CheckboxLabeled("AnomalyPatch_PsychicRitualZoning".Translate(), ref PsychicRitualZoning);
-            listing.CheckboxLabeled("AnomalyPatch_RitualTargetsDontNeedRescue".Translate(), ref RitualTargetsDontNeedRescue);
-            listing.CheckboxLabeled("AnomalyPatch_DevourerWaterAssaultFix".Translate(), ref DevourerWaterAssaultFix);
+            DoSetting(listing, "AnomalyPatch_RitualDialogSorting", ref RitualDialogSorting);
+            DoSetting(listing, "AnomalyPatch_PsychicRitualZoning", ref PsychicRitualZoning);
+            DoSetting(listing, "AnomalyPatch_RitualTargetsDontNeedRescue", ref RitualTargetsDontNeedRescue);
+            DoSetting(listing, "AnomalyPatch_DevourerWaterAssaultFix", ref DevourerWaterAssaultFix, bugFix: true);
 
             listing.Gap();
 
             DoHeader(listing, "AnomalyPatch_Entities");
-            listing.CheckboxLabeled("AnomalyPatch_ForbidMonolithCorpses".Translate(), ref ForbidMonolithCorpses);
-            listing.CheckboxLabeled("AnomalyPatch_DisableDisturbingVision".Translate(), ref DisableDisturbingVision);
-            listing.CheckboxLabeled("AnomalyPatch_DontHideStats".Translate(), ref DontHideStats);
-            listing.CheckboxLabeled("AnomalyPatch_GhoulHunting".Translate(), ref GhoulHunting);
-            listing.CheckboxLabeled("AnomalyPatch_FoodPriority".Translate(), ref FoodPriority);
-            listing.CheckboxLabeled("AnomalyPatch_DeadGhoulsInColonistBar".Translate(), ref DeadGhoulsInColonistBar);
-            if (!AnomalyPatchMod.BigAndSmall)
-            {
-                listing.CheckboxLabeled("AnomalyPatch_CreepJoinerLove".Translate() + " " + "AnomalyPatch_RestartRequired".Translate(), ref CreepJoinerLove);
-            }
-            listing.CheckboxLabeled("AnomalyPatch_CreepjoinerBodyTypeFix".Translate() + " " + "AnomalyPatch_RestartRequired".Translate(), ref CreepjoinerBodyTypeFix);
+            DoSetting(listing, "AnomalyPatch_ForbidMonolithCorpses", ref ForbidMonolithCorpses);
+            DoSetting(listing, "AnomalyPatch_DisableDisturbingVision", ref DisableDisturbingVision);
+            DoSetting(listing, "AnomalyPatch_DontHideStats", ref DontHideStats);
+            DoSetting(listing, "AnomalyPatch_GhoulHunting", ref GhoulHunting);
+            DoSetting(listing, "AnomalyPatch_FoodPriority", ref FoodPriority);
+            DoSetting(listing, "AnomalyPatch_DeadGhoulsInColonistBar", ref DeadGhoulsInColonistBar);
+            DoSetting(listing, "AnomalyPatch_CreepJoinerLove", ref CreepJoinerLove, restartRequired: true, dependsOn: !AnomalyPatchMod.BigAndSmall);
+            DoSetting(listing, "AnomalyPatch_CreepjoinerBodyTypeFix", ref CreepjoinerBodyTypeFix, restartRequired: true, bugFix: true);
 
             listing.Gap();
 
             DoHeader(listing, "AnomalyPatch_Misc");
-            listing.CheckboxLabeled("AnomalyPatch_AtmosphericHeaterFactor".Translate(), ref AtmosphericHeaterFactor);
-            listing.CheckboxLabeled("AnomalyPatch_InhumanPregnancyAttitude".Translate() + " " + "AnomalyPatch_RestartRequired".Translate(), ref InhumanPregnancyAttitude);
-            listing.CheckboxLabeled("AnomalyPatch_AvoidDreadLeather".Translate(), ref AvoidDreadLeather);
+            DoSetting(listing, "AnomalyPatch_AtmosphericHeaterFactor", ref AtmosphericHeaterFactor);
+            DoSetting(listing, "AnomalyPatch_InhumanPregnancyAttitude", ref InhumanPregnancyAttitude, restartRequired: true);
+            DoSetting(listing, "AnomalyPatch_AvoidDreadLeather", ref AvoidDreadLeather);
 
             y = listing.CurHeight;
             listing.End();
-
             Widgets.EndScrollView();
         }
 
@@ -107,6 +104,15 @@ namespace AnomalyPatch
                 listing.Label(key.Translate());
             }   
             listing.GapLine();
+        }
+
+        private static void DoSetting(Listing_Standard listing, string key, ref bool setting, bool restartRequired = false, bool bugFix = false, bool dependsOn = true, int indentLevel = 0)
+        {
+            if (dependsOn)
+            {
+                string indent = new string(' ', indentLevel * 2);
+                listing.CheckboxLabeled(indent + (bugFix ? "AnomalyPatch_BugFix".Translate() + ": " : TaggedString.Empty) + key.Translate() + (restartRequired ? " " + "AnomalyPatch_RestartRequired".Translate() : TaggedString.Empty), ref setting);
+            }
         }
 
         public override void ExposeData()
@@ -138,6 +144,7 @@ namespace AnomalyPatch
             Scribe_Values.Look(ref RitualTargetsDontNeedRescue, "RitualTargetsDontNeedRescue", true);
             Scribe_Values.Look(ref AvoidDreadLeather, "AvoidDreadLeather", true);
             Scribe_Values.Look(ref CreepjoinerBodyTypeFix, "CreepjoinerBodyTypeFix", true);
+            Scribe_Values.Look(ref DontBlockPrisonDoors, "DontBlockPrisonDoors", true);
         }
     }
 }

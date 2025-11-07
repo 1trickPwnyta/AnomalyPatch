@@ -8,7 +8,7 @@ namespace AnomalyPatch.DontBlockDoors
 {
     public static class DontBlockDoorsUtility
     {
-        public static bool IsContainmentOrPrisonDoorway(this Region region)
+        public static bool IsDangerousDoorway(this Region region)
         {
             if (region != null && region.IsDoorway)
             {
@@ -19,7 +19,7 @@ namespace AnomalyPatch.DontBlockDoors
                         Room room = cardinalCell.GetRoom(region.Map);
                         if (room != null && room.ProperRoom)
                         {
-                            if (room.IsPrisonCell || room.ContainedAndAdjacentThings.Any(t => ThingRequestGroup.EntityHolder.Includes(t.def)))
+                            if ((room.IsPrisonCell && AnomalyPatchSettings.DontBlockPrisonDoors) || room.ContainedAndAdjacentThings.Any(t => ThingRequestGroup.EntityHolder.Includes(t.def)))
                             {
                                 return true;
                             }
@@ -30,7 +30,7 @@ namespace AnomalyPatch.DontBlockDoors
             return false;
         }
 
-        public static bool IsInContainmentOrPrisonDoorway(this Pawn pawn) => pawn.Position.GetRegion(pawn.Map)?.IsContainmentOrPrisonDoorway() ?? false;
+        public static bool IsInDangerousDoorway(this Pawn pawn) => pawn.Position.GetRegion(pawn.Map)?.IsDangerousDoorway() ?? false;
 
         public static void GotoBestCell(LocalTargetInfo target, Pawn actor, PathEndMode peMode)
         {
@@ -44,7 +44,7 @@ namespace AnomalyPatch.DontBlockDoors
                 adjacentCells = GenAdj.CellsAdjacent8Way(target.Thing);
             }
             IntVec3 bestCell;
-            if (actor.IsPlayerControlled && adjacentCells.Any(c => c.GetRegion(actor.Map).IsContainmentOrPrisonDoorway()) && adjacentCells.Where(c => actor.CanReach(c, PathEndMode.OnCell, Danger.Deadly) && !c.GetRegion(actor.Map).IsContainmentOrPrisonDoorway() && !c.HasTrap(actor.Map)).TryMinBy(c => actor.Position.DistanceTo(c), out bestCell))
+            if (actor.IsPlayerControlled && adjacentCells.Any(c => c.GetRegion(actor.Map).IsDangerousDoorway()) && adjacentCells.Where(c => actor.CanReach(c, PathEndMode.OnCell, Danger.Deadly) && !c.GetRegion(actor.Map).IsDangerousDoorway() && !c.HasTrap(actor.Map)).TryMinBy(c => actor.Position.DistanceTo(c), out bestCell))
             {
                 actor.pather.StartPath(bestCell, PathEndMode.OnCell);
             }

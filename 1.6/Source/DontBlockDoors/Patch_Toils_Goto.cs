@@ -98,7 +98,7 @@ namespace AnomalyPatch.DontBlockDoors
             instructionsList.InsertRange(index + 1, new[]
             {
                 new CodeInstruction(OpCodes.Ldloc_0),
-                new CodeInstruction(OpCodes.Call, typeof(DontBlockDoorsUtility).Method(nameof(DontBlockDoorsUtility.IsInContainmentOrPrisonDoorway))),
+                new CodeInstruction(OpCodes.Call, typeof(DontBlockDoorsUtility).Method(nameof(DontBlockDoorsUtility.IsInDangerousDoorway))),
                 new CodeInstruction(OpCodes.Brtrue_S, brFalse.operand),
                 new CodeInstruction(OpCodes.Ldloc_0),
                 new CodeInstruction(OpCodes.Callvirt, typeof(Thing).PropertyGetter(nameof(Thing.Position))),

@@ -12,7 +12,7 @@ namespace AnomalyPatch.DontBlockDoors
         {
             if (AnomalyPatchSettings.DontBlockDoors && __result && careAboutDanger && pawn.IsPlayerControlled)
             {
-                if (c.GetRegion(pawn.Map).IsContainmentOrPrisonDoorway() || c.HasTrap(pawn.Map))
+                if (c.GetRegion(pawn.Map).IsDangerousDoorway() || c.HasTrap(pawn.Map))
                 {
                     __result = false;
                 }

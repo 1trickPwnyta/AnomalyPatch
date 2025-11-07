@@ -6,14 +6,15 @@
 	<AnomalyPatch_Entities>Dark entities</AnomalyPatch_Entities>
 	<AnomalyPatch_Misc>Miscellaneous</AnomalyPatch_Misc>
 	<AnomalyPatch_RestartRequired>(requires restart)</AnomalyPatch_RestartRequired>
+	<AnomalyPatch_BugFix>Bug fix</AnomalyPatch_BugFix>
 	<AnomalyPatch_NoResearchSelected>No Anomaly research project active</AnomalyPatch_NoResearchSelected>
 	<AnomalyPatch_AtmosphericHeaterFactor>Disable "Need warm clothes" alert with atmospheric heater</AnomalyPatch_AtmosphericHeaterFactor>
 	<AnomalyPatch_BioferriteHarvesterMultipleSelection>Show total bioferrite contained with multiple harvesters selected</AnomalyPatch_BioferriteHarvesterMultipleSelection>
 	<AnomalyPatch_CharacterHighlighting>Show silhouettes even in unnatural darkness</AnomalyPatch_CharacterHighlighting>
 	<AnomalyPatch_DangerousActivityLevels>Show highest obelisk activity level in multiple alert</AnomalyPatch_DangerousActivityLevels>
 	<AnomalyPatch_DeathPallResurrectionSound>Death pall resurrection messages are silent</AnomalyPatch_DeathPallResurrectionSound>
-	<AnomalyPatch_DevourerWaterAssaultFix>Fix void provocation bug with devourer water assault</AnomalyPatch_DevourerWaterAssaultFix>
-	<AnomalyPatch_DontBlockDoors>Don't perform work in a containment or prison cell doorway</AnomalyPatch_DontBlockDoors>
+	<AnomalyPatch_DevourerWaterAssaultFix>Void provocation can silently fail on devourer water assault</AnomalyPatch_DevourerWaterAssaultFix>
+	<AnomalyPatch_DontBlockDoors>Don't perform work in a containment cell doorway</AnomalyPatch_DontBlockDoors>
 	<AnomalyPatch_FoodPriority>Prioritize twisted meat for caravaning ghouls and animals</AnomalyPatch_FoodPriority>
 	<AnomalyPatch_GhoulHunting>Allow ghouls to hunt prey on their own</AnomalyPatch_GhoulHunting>
 	<AnomalyPatch_HorrorMusic>Pit gates don't cause horror/combat music to play unless you're in them</AnomalyPatch_HorrorMusic>
@@ -27,13 +28,14 @@
 	<AnomalyPatch_StopSuppression>Allow pawns to stop suppressing obelisk activity before target level reached</AnomalyPatch_StopSuppression>
 	<AnomalyPatch_HoldingPlatformAlert>Disable holding platforms needed alert</AnomalyPatch_HoldingPlatformAlert>
 	<AnomalyPatch_CreepJoinerLove>Allow creepjoiners to romance non-creepjoiners and vice versa</AnomalyPatch_CreepJoinerLove>
-	<AnomalyPatch_UnnaturalDarknessMapFix>Fix bug where certain Anomaly incidents can generate using threat points from one map but spawn on another</AnomalyPatch_UnnaturalDarknessMapFix>
+	<AnomalyPatch_UnnaturalDarknessMapFix>Certain Anomaly incidents can generate using threat points from one map but spawn on another</AnomalyPatch_UnnaturalDarknessMapFix>
 	<AnomalyPatch_DeadGhoulsInColonistBar>Show ghouls in colonist bar even while dead or in a caravan</AnomalyPatch_DeadGhoulsInColonistBar>
 	<AnomalyPatch_DisableDisturbingVision>Disable disturbing vision letter</AnomalyPatch_DisableDisturbingVision>
 	<AnomalyPatch_InhumanPregnancyAttitude>Inhumanized pawns don't care when their pregnancy is terminated</AnomalyPatch_InhumanPregnancyAttitude>
 	<AnomalyPatch_RitualTargetsDontNeedRescue>Suppress "Colonist needs rescue" alert for psychic ritual targets</AnomalyPatch_RitualTargetsDontNeedRescue>
 	<AnomalyPatch_AvoidDreadLeather>Pawns avoid dread leather apparel if they don't like it</AnomalyPatch_AvoidDreadLeather>
-	<AnomalyPatch_CreepjoinerBodyTypeFix>Fix bug with female creepjoiners having male body type</AnomalyPatch_CreepjoinerBodyTypeFix>
+	<AnomalyPatch_CreepjoinerBodyTypeFix>Female creepjoiners erroneously have male body type</AnomalyPatch_CreepjoinerBodyTypeFix>
+	<AnomalyPatch_DontBlockPrisonDoors>Also don't perform work in a prison doorway</AnomalyPatch_DontBlockPrisonDoors>
 	<AnomalyPatch_SortBy>Sort by:</AnomalyPatch_SortBy>
 	<AnomalyPatch_Reverse>Reverse</AnomalyPatch_Reverse>
 	<AnomalyPatch_Age>Age</AnomalyPatch_Age>
