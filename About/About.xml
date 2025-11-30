@@ -3,53 +3,55 @@
 	<name>1trickPwnyta's Anomaly Patch</name>
 	<author>1trickPwnyta</author>
 	<packageId>anomalypatch.1trickPwnyta</packageId>
-	<modVersion>1.4.4</modVersion>
+	<modVersion>1.5.0</modVersion>
 	<supportedVersions>
 		<li>1.5</li>
 		<li>1.6</li>
 	</supportedVersions>
-	<description>
-This mod makes a handful of small tweaks to the Anomaly DLC that are intended to make the game a bit more enjoyable without changing the gameplay too much. Each tweak can be toggled on or off in the mod settings.
+	<description><![CDATA[This mod makes a handful of small tweaks to the Anomaly DLC that are intended to make the game a bit more enjoyable without changing the gameplay too much. Each tweak can be toggled on or off in the mod settings.
 
-=Anomaly incidents=
-- Pawn silhouettes (when zoomed out) are no longer hidden in unnatural darkness.
-- Death pall resurrection messages no longer make a noise so you won't get inundated with beeps during death palls. Don't worry - you'll still see the message, and you'll still hear the gross corpsey sound of them resurrecting nearby.
-- Pit gates don't cause horror music to play unless you go into them, and horror music stops when you leave, and enemies in the undercave don't cause combat music to play unless you're in there with them, and combat music stops when you leave.
-- When returning from the labyrinth created by a warped obelisk, any items transferred to your home map will be set to forbidden unless they appear in the home zone.
-- Bug fix: Certain Anomaly incidents (Unnatural darkness, Sightstealer arrival) can spawn on a different colony map than the one whose wealth was used to generate their threat points.
+<size=18px><color=#5aa9d6>Anomaly incidents</color></size>
+  &#8226; Pawn silhouettes (when zoomed out) are no longer hidden in unnatural darkness.
+  &#8226; Death pall resurrection messages no longer make a noise so you won't get inundated with beeps during death palls. Don't worry - you'll still see the message, and you'll still hear the gross corpsey sound of them resurrecting nearby.
+  &#8226; Pit gates don't cause horror music to play unless you go into them, and horror music stops when you leave, and enemies in the undercave don't cause combat music to play unless you're in there with them, and combat music stops when you leave.
+  &#8226; When returning from the labyrinth created by a warped obelisk, any items transferred to your home map will be set to forbidden unless they appear in the home zone.
+  &#8226; Bug fix: Certain Anomaly incidents (Unnatural darkness, Sightstealer arrival) can spawn on a different colony map than the one whose wealth was used to generate their threat points.
 
-=Study, suppression, and containment=
-- Enables study and suppression of entities, including non-living entities such as obelisks, by default
-- Pawns will not study entities if no Anomaly research project is active and studying the entity provides no other benefits (like learning about obelisks or how to destroy the golden cube)
-- Colonists are no longer forced to finish suppressing obelisks in order to take breaks (useful for pawns with lower psychic sensitivity).
-- When multiple obelisks reach dangerous (90%) activity levels, the alert on the right side of the screen will show the highest activity level instead of showing no acitivty level.
-- Selecting multiple bioferrite harvesters shows the total amount of bioferrite contained (and increase per day) in all of them
-- The "extract bioferrite" option is enabled automatically when capturing entities if there is no attached bioferrite extractor.
-- When working, colonists will try to find a spot to stand in that doesn't hold a containment cell or prison door open if possible. This way they won't compromise entity containment while building flooring etc. in a containment cell or allow a prisoner to escape.
-- Holding platforms needed alert is disabled.
+<size=18px><color=#5aa9d6>Study, suppression, and containment</color></size>
+  &#8226; Enables study and suppression of entities, including non-living entities such as obelisks, by default
+  &#8226; Pawns will not study entities if no Anomaly research project is active and studying the entity provides no other benefits (like learning about obelisks or how to destroy the golden cube)
+  &#8226; Colonists are no longer forced to finish suppressing obelisks in order to take breaks (useful for pawns with lower psychic sensitivity).
+  &#8226; When multiple obelisks reach dangerous (90%) activity levels, the alert on the right side of the screen will show the highest activity level instead of showing no acitivty level.
+  &#8226; Selecting multiple bioferrite harvesters shows the total amount of bioferrite contained (and increase per day) in all of them
+  &#8226; The "extract bioferrite" option is enabled automatically when capturing entities if there is no attached bioferrite extractor.
+  &#8226; When working, colonists will try to find a spot to stand in that doesn't hold a containment cell or prison door open if possible. This way they won't compromise entity containment while building flooring etc. in a containment cell or allow a prisoner to escape.
+  &#8226; Holding platforms needed alert is disabled.
 
-=Psychic rituals=
-- The psychic ritual dialog sorts pawns by psychic sensitivity or by age, at your option.
-- Colonists will adhere to zone restrictions while gathering offerings for psychic rituals and while moving to the psychic ritual spot.
-- Suppresses the "Colonist needs rescue" alert for targets of psychic rituals
-- Bug fix: Void provocation rituals can spawn devourer water assaults on maps with no valid water to spawn from, resulting in the ritual doing nothing
+<size=18px><color=#5aa9d6>Psychic rituals</color></size>
+  &#8226; The psychic ritual dialog sorts pawns by psychic sensitivity or by age, at your option.
+  &#8226; Colonists will adhere to zone restrictions while gathering offerings for psychic rituals and while moving to the psychic ritual spot.
+  &#8226; Suppresses the "Colonist needs rescue" alert for targets of psychic rituals
+  &#8226; Bug fix: Void provocation rituals can spawn devourer water assaults on maps with no valid water to spawn from, resulting in the ritual doing nothing
 
-=Dark entities=
-- Corpses initially spawned around the void monolith are forbidden by default.
-- Disables "Disturbing vision" letter because it doesn't actually do anything other than remind you that the monolith exists.
-- Certain entity stats are no longer hidden (nociosphere, metalhorror, revenant).
-- Ghouls can hunt prey just like your animals can.
-- Caravan dialog food auto selection prioritizes twisted meat for ghouls and carniverous animals, then human/insect meat, then other meat.
-- Dead ghouls remain in the colonist bar until buried/destroyed, just like colonists do. Ghouls are also shown in the caravan colonist bar.
-- Creepjoiners and non-creepjoiners can now form romantic relationships with each other.
-- Bug fix: Female creepjoiners use male body type
+<size=18px><color=#5aa9d6>Dark entities</color></size>
+  &#8226; Corpses initially spawned around the void monolith are forbidden by default.
+  &#8226; Disables "Disturbing vision" letter because it doesn't actually do anything other than remind you that the monolith exists.
+  &#8226; Certain entity stats are no longer hidden (nociosphere, metalhorror, revenant).
+  &#8226; Ghouls can hunt prey just like your animals can.
+  &#8226; Caravan dialog food auto selection prioritizes twisted meat for ghouls and carniverous animals, then human/insect meat, then other meat.
+  &#8226; Dead ghouls remain in the colonist bar until buried/destroyed, just like colonists do. Ghouls are also shown in the caravan colonist bar.
+  &#8226; Creepjoiners and non-creepjoiners can now form romantic relationships with each other.
+  &#8226; Bug fix: Female creepjoiners use male body type
 
-=Miscellaneous=
-- The "need warm clothes" alert on the right side of the screen won't show up if you have a powered and fueled atmospheric heater.
-- Prevents inhumanized pawns from having any personal feelings (mood bonuses/penalties) about their pregnancies
-- Pawns will avoid wearing dread leather if they don't like it
+<size=18px><color=#5aa9d6>Miscellaneous</color></size>
+  &#8226; The "need warm clothes" alert on the right side of the screen won't show up if you have a powered and fueled atmospheric heater.
+  &#8226; Prevents inhumanized pawns from having any personal feelings (mood bonuses/penalties) about their pregnancies
+  &#8226; Pawns will avoid wearing dread leather if they don't like it
 
-=== Updates ===
+________________________________________________
+
+<size=18px><color=#5aa9d6>Updates</color></size>
+11/29/2025: Added option to enable bioferrite extraction by default on contained entities
 11/06/2025: Split doorway work option into two options: one for containment cells, one for prisons
 10/14/2025: Add Sightstealer arrival event to bug fix for incidents spawning on the wrong map
 08/08/2025: Fixed bugs with containment/prison door feature.
@@ -64,9 +66,9 @@ This mod makes a handful of small tweaks to the Anomaly DLC that are intended to
 06/10/2024: Added many new tweaks, added settings to toggle each tweak
 05/08/2024: Fixed world map bug when selecting any tile on starting world map screen, or selecting any tile while multiple bioferrite harvesters are selected
 
-=== Credits ===
-Mod icon: twitter.com/mouse_draws
-	</description>
+<size=18px><color=#5aa9d6>Credits</color></size>
+  &#8226; Mod icon: twitter.com/mouse_draws
+	]]></description>
 	<url>https://github.com/1trickPwnyta/AnomalyPatch</url>
 	<modDependencies>
 		<li>
