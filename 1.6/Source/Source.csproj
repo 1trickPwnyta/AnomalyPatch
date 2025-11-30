@@ -83,6 +83,7 @@
     <Compile Include="DontBlockDoors\Patch_Toils_Goto.cs" />
     <Compile Include="DontHideStats\Patch_StatDrawEntry.cs" />
     <Compile Include="DontHideStats\StatUtility.cs" />
+    <Compile Include="ExtractBioferriteByDefault\Patch_CompHoldingPlatformTarget.cs" />
     <Compile Include="FoodPriority\Patch_CaravanPawnsNeedsUtility.cs" />
     <Compile Include="ForbidMonolithCorpses\CorpseUtility.cs" />
     <Compile Include="ForbidMonolithCorpses\Patch_GenStep_Monolith.cs" />

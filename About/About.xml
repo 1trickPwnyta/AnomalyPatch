@@ -24,6 +24,7 @@ This mod makes a handful of small tweaks to the Anomaly DLC that are intended to
 - Colonists are no longer forced to finish suppressing obelisks in order to take breaks (useful for pawns with lower psychic sensitivity).
 - When multiple obelisks reach dangerous (90%) activity levels, the alert on the right side of the screen will show the highest activity level instead of showing no acitivty level.
 - Selecting multiple bioferrite harvesters shows the total amount of bioferrite contained (and increase per day) in all of them
+- The "extract bioferrite" option is enabled automatically when capturing entities if there is no attached bioferrite extractor.
 - When working, colonists will try to find a spot to stand in that doesn't hold a containment cell or prison door open if possible. This way they won't compromise entity containment while building flooring etc. in a containment cell or allow a prisoner to escape.
 - Holding platforms needed alert is disabled.
 

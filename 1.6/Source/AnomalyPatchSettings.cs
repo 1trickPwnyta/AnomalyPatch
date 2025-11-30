@@ -35,6 +35,7 @@ namespace AnomalyPatch
         public static bool CreepjoinerBodyTypeFix = true;
         public static bool SightstealerArrivalMapFix = true;
         public static bool DontBlockPrisonDoors = true;
+        public static bool ExtractBioferriteByDefault = true;
 
         private static Vector2 scrollPosition;
         private static float y;
@@ -61,6 +62,7 @@ namespace AnomalyPatch
             DoSetting(listing, "AnomalyPatch_StopSuppression", ref StopSuppression);
             DoSetting(listing, "AnomalyPatch_DangerousActivityLevels", ref DangerousActivityLevels);
             DoSetting(listing, "AnomalyPatch_BioferriteHarvesterMultipleSelection", ref BioferriteHarvesterMultipleSelection);
+            DoSetting(listing, "AnomalyPatch_ExtractBioferriteByDefault", ref ExtractBioferriteByDefault);
             DoSetting(listing, "AnomalyPatch_DontBlockDoors", ref DontBlockDoors);
             DoSetting(listing, "AnomalyPatch_DontBlockPrisonDoors", ref DontBlockPrisonDoors, dependsOn: DontBlockDoors, indentLevel: 1);
             DoSetting(listing, "AnomalyPatch_HoldingPlatformAlert", ref HoldingPlatformAlert);
@@ -145,6 +147,7 @@ namespace AnomalyPatch
             Scribe_Values.Look(ref AvoidDreadLeather, "AvoidDreadLeather", true);
             Scribe_Values.Look(ref CreepjoinerBodyTypeFix, "CreepjoinerBodyTypeFix", true);
             Scribe_Values.Look(ref DontBlockPrisonDoors, "DontBlockPrisonDoors", true);
+            Scribe_Values.Look(ref ExtractBioferriteByDefault, "ExtractBioferriteByDefault", true);
         }
     }
 }
