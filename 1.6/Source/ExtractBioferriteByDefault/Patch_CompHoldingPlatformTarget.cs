@@ -1,5 +1,6 @@
 ﻿using HarmonyLib;
 using RimWorld;
+using Verse;
 
 namespace AnomalyPatch.ExtractBioferriteByDefault
 {
@@ -9,7 +10,7 @@ namespace AnomalyPatch.ExtractBioferriteByDefault
     {
         public static void Postfix(CompHoldingPlatformTarget __instance)
         {
-            if (AnomalyPatchSettings.ExtractBioferriteByDefault && ResearchProjectDefOf.BioferriteExtraction.IsFinished && !__instance.HeldPlatform.HasAttachedBioferriteHarvester)
+            if (AnomalyPatchSettings.ExtractBioferriteByDefault && ResearchProjectDefOf.BioferriteExtraction.IsFinished && !ResearchProjectDef.Named("BioferriteHarvesting").IsFinished)
             {
                 __instance.extractBioferrite = true;
             }
