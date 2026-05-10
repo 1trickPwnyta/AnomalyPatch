@@ -1,17 +1,19 @@
 ﻿using HarmonyLib;
 using RimWorld;
+using SpecialSauce.Multipatch;
 using System.Reflection;
 using Verse;
 
 namespace AnomalyPatch.GhoulHunting
 {
+    [HarmonyPatch_Compatibility(SpecialMod_Multipatch_Anomaly.PACKAGE_ID, Settings.GhoulHunting)]
     [HarmonyPatch(typeof(FoodUtility))]
     [HarmonyPatch(nameof(FoodUtility.TryFindBestFoodSourceFor))]
     public static class Patch_FoodUtility_TryFindBestFoodSourceFor
     {
         public static void Postfix(Pawn getter, Pawn eater, ref Thing foodSource, ref ThingDef foodDef, bool forceScanWholeMap, ref bool __result)
         {
-            if (AnomalyPatchSettings.GhoulHunting)
+            if (Settings.GhoulHunting.Enabled())
             {
                 if (!__result && getter == eater && eater.IsGhoul)
                 {
@@ -27,6 +29,7 @@ namespace AnomalyPatch.GhoulHunting
         }
     }
 
+    [HarmonyPatch_Compatibility(SpecialMod_Multipatch_Anomaly.PACKAGE_ID, Settings.GhoulHunting)]
     [HarmonyPatch(typeof(FoodUtility))]
     [HarmonyPatch(nameof(FoodUtility.IsAcceptablePreyFor))]
     public static class Patch_FoodUtility_IsAcceptablePreyFor

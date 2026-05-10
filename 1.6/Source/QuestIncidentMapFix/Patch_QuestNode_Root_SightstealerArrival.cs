@@ -1,5 +1,6 @@
 ﻿using HarmonyLib;
 using RimWorld.QuestGen;
+using SpecialSauce.Multipatch;
 using System.Collections.Generic;
 using System.Linq;
 using System.Reflection.Emit;
@@ -7,6 +8,7 @@ using Verse;
 
 namespace AnomalyPatch.QuestIncidentMapFix
 {
+    [HarmonyPatch_Compatibility(SpecialMod_Multipatch_Anomaly.PACKAGE_ID, Settings.QuestIncidentMapFix)]
     [HarmonyPatch(typeof(QuestNode_Root_SightstealerArrival))]
     [HarmonyPatch("RunInt")]
     public static class Patch_QuestNode_Root_SightstealerArrival
@@ -23,7 +25,7 @@ namespace AnomalyPatch.QuestIncidentMapFix
 
         private static Map GetMap(Slate slate, bool mustBeInfestable, int? preferMapWithMinFreeColonists, bool canBeSpace)
         {
-            return (AnomalyPatchSettings.QuestIncidentMapFix ? slate.Get<Map>("map") : null) ?? QuestGen_Get.GetMap(mustBeInfestable, preferMapWithMinFreeColonists, canBeSpace);
+            return (Settings.QuestIncidentMapFix.Enabled() ? slate.Get<Map>("map") : null) ?? QuestGen_Get.GetMap(mustBeInfestable, preferMapWithMinFreeColonists, canBeSpace);
         }
     }
 }

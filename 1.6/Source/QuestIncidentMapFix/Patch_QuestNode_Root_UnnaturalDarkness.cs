@@ -1,5 +1,6 @@
 ﻿using HarmonyLib;
 using RimWorld.QuestGen;
+using SpecialSauce.Multipatch;
 using System.Collections.Generic;
 using System.Reflection;
 using System.Reflection.Emit;
@@ -7,6 +8,7 @@ using Verse;
 
 namespace AnomalyPatch.QuestIncidentMapFix
 {
+    [HarmonyPatch_Compatibility(SpecialMod_Multipatch_Anomaly.PACKAGE_ID, Settings.QuestIncidentMapFix)]
     [HarmonyPatch(typeof(QuestNode_Root_UnnaturalDarkness))]
     [HarmonyPatch("TestRunInt")]
     public static class Patch_QuestNode_Root_UnnaturalDarkness_TestRunInt
@@ -26,6 +28,7 @@ namespace AnomalyPatch.QuestIncidentMapFix
         }
     }
 
+    [HarmonyPatch_Compatibility(SpecialMod_Multipatch_Anomaly.PACKAGE_ID, Settings.QuestIncidentMapFix)]
     [HarmonyPatch(typeof(QuestNode_Root_UnnaturalDarkness))]
     [HarmonyPatch("RunInt")]
     public static class Patch_QuestNode_Root_UnnaturalDarkness_RunInt

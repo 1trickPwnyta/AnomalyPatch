@@ -1,10 +1,12 @@
 ﻿using HarmonyLib;
 using RimWorld;
 using RimWorld.Planet;
+using SpecialSauce.Multipatch;
 using Verse;
 
 namespace AnomalyPatch.FoodPriority
 {
+    [HarmonyPatch_Compatibility(SpecialMod_Multipatch_Anomaly.PACKAGE_ID, Settings.FoodPriority)]
     [HarmonyPatch(typeof(CaravanPawnsNeedsUtility))]
     [HarmonyPatch(nameof(CaravanPawnsNeedsUtility.GetFoodScore))]
     [HarmonyPatch(new[] { typeof(ThingDef), typeof(Pawn), typeof(float) })]
@@ -12,7 +14,7 @@ namespace AnomalyPatch.FoodPriority
     {
         public static void Postfix(ThingDef food, Pawn pawn, ref float __result)
         {
-            if (AnomalyPatchSettings.FoodPriority)
+            if (Settings.FoodPriority.Enabled())
             {
                 if (!pawn.RaceProps.Humanlike || pawn.IsGhoul)
                 {

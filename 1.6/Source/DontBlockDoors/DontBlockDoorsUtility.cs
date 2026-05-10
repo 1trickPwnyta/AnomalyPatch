@@ -19,7 +19,7 @@ namespace AnomalyPatch.DontBlockDoors
                         Room room = cardinalCell.GetRoom(region.Map);
                         if (room != null && room.ProperRoom)
                         {
-                            if ((room.IsPrisonCell && AnomalyPatchSettings.DontBlockPrisonDoors) || room.ContainedAndAdjacentThings.Any(t => ThingRequestGroup.EntityHolder.Includes(t.def)))
+                            if ((room.IsPrisonCell && Settings.DontBlockPrisonDoors.Enabled()) || room.ContainedAndAdjacentThings.Any(t => ThingRequestGroup.EntityHolder.Includes(t.def)))
                             {
                                 return true;
                             }

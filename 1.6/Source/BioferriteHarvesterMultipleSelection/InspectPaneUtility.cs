@@ -1,4 +1,5 @@
-﻿using RimWorld;
+﻿using HarmonyLib;
+using RimWorld;
 using System;
 using System.Linq;
 using UnityEngine;
@@ -10,7 +11,7 @@ namespace AnomalyPatch.BioferriteHarvesterMultipleSelection
     {
         public static bool ShouldShowContentsForMultipleBioferriteHarvesters()
         {
-            return AnomalyPatchSettings.BioferriteHarvesterMultipleSelection && Find.Selector.NumSelected > 1 && Find.Selector.SelectedObjects.All(obj => obj is Thing && ((Thing)obj).def == ThingDefOf.BioferriteHarvester);
+            return Settings.BioferriteHarvesterMultipleSelection.Enabled() && Find.Selector.NumSelected > 1 && Find.Selector.SelectedObjects.All(obj => obj is Thing && ((Thing)obj).def == ThingDefOf.BioferriteHarvester);
         }
 
         public static void DoPaneContentsForMultipleBioferriteHarvesters(Rect rect)
@@ -27,7 +28,7 @@ namespace AnomalyPatch.BioferriteHarvesterMultipleSelection
                 foreach (object obj in Find.Selector.SelectedObjects)
                 {
                     contained += ((Building_BioferriteHarvester)obj).containedBioferrite;
-                    perDay += (float)AnomalyPatchRefs.m_Building_BioferriteHarvester_get_BioferritePerDay.Invoke(obj, new object[] { });
+                    perDay += (float)typeof(Building_BioferriteHarvester).PropertyGetter("BioferritePerDay").Invoke(obj, new object[] { });
                 }
                 text += contained.ToString("0.00");
                 text += $" (+{perDay.ToString("0.00")} {"BioferriteHarvesterPerDay".Translate()})";

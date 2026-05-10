@@ -2,7 +2,7 @@
 <ModMetaData>
 	<name>1trickPwnyta's Anomaly Patch</name>
 	<author>1trickPwnyta</author>
-	<packageId>anomalypatch.1trickPwnyta</packageId>
+	<packageId>1trickpwnyta.anomalypatch</packageId>
 	<modVersion>1.5.1</modVersion>
 	<supportedVersions>
 		<li>1.5</li>
@@ -75,10 +75,25 @@ ________________________________________________
 	<url>https://github.com/1trickPwnyta/AnomalyPatch</url>
 	<modDependencies>
 		<li>
+			<packageId>ludeon.rimworld.anomaly</packageId>
+			<displayName>Anomaly</displayName>
+		</li>
+		<li>
 			<packageId>brrainz.harmony</packageId>
 			<displayName>Harmony</displayName>
 			<steamWorkshopUrl>steam://url/CommunityFilePage/2009463077</steamWorkshopUrl>
 			<downloadUrl>https://github.com/pardeike/HarmonyRimWorld/releases/latest</downloadUrl>
 		</li>
+		<li>
+			<packageId>1trickPwnyta.specialsauce</packageId>
+			<displayName>1trickPwnyta's Special Sauce</displayName>
+			<downloadUrl>https://github.com/1trickPwnyta/SpecialSauce</downloadUrl>
+		</li>
 	</modDependencies>
+	<incompatibleWith>
+		<li>anomalypatch.1trickPwnyta</li>
+	</incompatibleWith>
+	<loadAfter>
+		<li>1trickPwnyta.specialsauce</li>
+	</loadAfter>
 </ModMetaData>

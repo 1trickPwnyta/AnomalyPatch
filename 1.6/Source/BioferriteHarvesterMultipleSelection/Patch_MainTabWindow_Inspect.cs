@@ -1,11 +1,14 @@
 ﻿using HarmonyLib;
 using RimWorld;
+using SpecialSauce.Multipatch;
 using UnityEngine;
 
 namespace AnomalyPatch.BioferriteHarvesterMultipleSelection
 {
+    [HarmonyPatch_Compatibility(SpecialMod_Multipatch_Anomaly.PACKAGE_ID, Settings.BioferriteHarvesterMultipleSelection)]
     [HarmonyPatch(typeof(MainTabWindow_Inspect))]
-    [HarmonyPatch("get_ShouldShowPaneContents")]
+    [HarmonyPatch(nameof(MainTabWindow_Inspect.ShouldShowPaneContents))]
+    [HarmonyPatch(MethodType.Getter)]
     public static class Patch_MainTabWindow_Inspect_get_ShouldShowPaneContents
     {
         public static void Postfix(ref bool __result)
@@ -14,6 +17,7 @@ namespace AnomalyPatch.BioferriteHarvesterMultipleSelection
         }
     }
 
+    [HarmonyPatch_Compatibility(SpecialMod_Multipatch_Anomaly.PACKAGE_ID, Settings.BioferriteHarvesterMultipleSelection)]
     [HarmonyPatch(typeof(MainTabWindow_Inspect))]
     [HarmonyPatch(nameof(MainTabWindow_Inspect.DoPaneContents))]
     public static class Patch_MainTabWindow_Inspect_DoPaneContents

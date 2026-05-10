@@ -1,6 +1,7 @@
 ﻿using HarmonyLib;
 using RimWorld;
 using RimWorld.QuestGen;
+using SpecialSauce.Multipatch;
 using System.Collections.Generic;
 using System.Linq;
 using System.Reflection.Emit;
@@ -8,6 +9,7 @@ using Verse;
 
 namespace AnomalyPatch.QuestIncidentMapFix
 {
+    [HarmonyPatch_Compatibility(SpecialMod_Multipatch_Anomaly.PACKAGE_ID, Settings.QuestIncidentMapFix)]
     [HarmonyPatch(typeof(IncidentWorker_SightstealerArrival))]
     [HarmonyPatch("TryExecuteWorker")]
     public static class Patch_IncidentWorker_SightstealerArrival
@@ -23,7 +25,7 @@ namespace AnomalyPatch.QuestIncidentMapFix
 
         private static Map GetMap(bool mustBeInfestable, int? preferMapWithMinFreeColonists, bool canBeSpace, IncidentParms parms)
         {
-            return (AnomalyPatchSettings.QuestIncidentMapFix ? parms.target as Map : null) ?? QuestGen_Get.GetMap(mustBeInfestable, preferMapWithMinFreeColonists, canBeSpace);
+            return (Settings.QuestIncidentMapFix.Enabled() ? parms.target as Map : null) ?? QuestGen_Get.GetMap(mustBeInfestable, preferMapWithMinFreeColonists, canBeSpace);
         }
     }
 }

@@ -1,4 +1,5 @@
 ﻿using HarmonyLib;
+using SpecialSauce.Multipatch;
 using System.Collections.Generic;
 using System.Linq;
 using System.Reflection;
@@ -8,6 +9,7 @@ using Verse.AI;
 
 namespace AnomalyPatch.DontBlockDoors
 {
+    [HarmonyPatch_Compatibility(SpecialMod_Multipatch_Anomaly.PACKAGE_ID, Settings.DontBlockDoors)]
     [HarmonyPatch(typeof(Toils_Goto))]
     [HarmonyPatch(nameof(Toils_Goto.GotoThing))]
     [HarmonyPatch(new[] { typeof(TargetIndex), typeof(PathEndMode), typeof(bool) })]
@@ -15,7 +17,7 @@ namespace AnomalyPatch.DontBlockDoors
     {
         public static void Postfix(TargetIndex ind, PathEndMode peMode, bool canGotoSpawnedParent, ref Toil __result)
         {
-            if (AnomalyPatchSettings.DontBlockDoors && peMode == PathEndMode.Touch)
+            if (Settings.DontBlockDoors.Enabled() && peMode == PathEndMode.Touch)
             {
                 Toil toil = __result;
                 toil.initAction = delegate ()
@@ -33,6 +35,7 @@ namespace AnomalyPatch.DontBlockDoors
         }
     }
 
+    [HarmonyPatch_Compatibility(SpecialMod_Multipatch_Anomaly.PACKAGE_ID, Settings.DontBlockDoors)]
     [HarmonyPatch(typeof(Toils_Goto))]
     [HarmonyPatch(nameof(Toils_Goto.GotoCell))]
     [HarmonyPatch(new[] { typeof(TargetIndex), typeof(PathEndMode) })]
@@ -40,7 +43,7 @@ namespace AnomalyPatch.DontBlockDoors
     {
         public static void Postfix(TargetIndex ind, PathEndMode peMode, ref Toil __result)
         {
-            if (AnomalyPatchSettings.DontBlockDoors && peMode == PathEndMode.Touch)
+            if (Settings.DontBlockDoors.Enabled() && peMode == PathEndMode.Touch)
             {
                 Toil toil = __result;
                 toil.initAction = delegate ()
@@ -58,6 +61,7 @@ namespace AnomalyPatch.DontBlockDoors
         }
     }
 
+    [HarmonyPatch_Compatibility(SpecialMod_Multipatch_Anomaly.PACKAGE_ID, Settings.DontBlockDoors)]
     [HarmonyPatch(typeof(Toils_Goto))]
     [HarmonyPatch(nameof(Toils_Goto.GotoCell))]
     [HarmonyPatch(new[] { typeof(IntVec3), typeof(PathEndMode) })]
@@ -65,7 +69,7 @@ namespace AnomalyPatch.DontBlockDoors
     {
         public static void Postfix(IntVec3 cell, PathEndMode peMode, ref Toil __result)
         {
-            if (AnomalyPatchSettings.DontBlockDoors && peMode == PathEndMode.Touch)
+            if (Settings.DontBlockDoors.Enabled() && peMode == PathEndMode.Touch)
             {
                 Toil toil = __result;
                 toil.initAction = delegate ()
@@ -82,7 +86,7 @@ namespace AnomalyPatch.DontBlockDoors
         }
     }
 
-    [HarmonyPatch]
+    [HarmonyPatch_Compatibility(SpecialMod_Multipatch_Anomaly.PACKAGE_ID, Settings.DontBlockDoors)]
     public static class PatchTargeted_Toils_Goto_GotoBuild_tickIntervalAction
     {
         public static IEnumerable<MethodBase> TargetMethods()

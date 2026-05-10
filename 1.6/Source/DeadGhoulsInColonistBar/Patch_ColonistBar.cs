@@ -1,5 +1,6 @@
 ﻿using HarmonyLib;
 using RimWorld;
+using SpecialSauce.Multipatch;
 using System.Collections.Generic;
 using System.Reflection;
 using System.Reflection.Emit;
@@ -7,6 +8,7 @@ using Verse;
 
 namespace AnomalyPatch.DeadGhoulsInColonistBar
 {
+    [HarmonyPatch_Compatibility(SpecialMod_Multipatch_Anomaly.PACKAGE_ID, Settings.DeadGhoulsInColonistBar)]
     [HarmonyPatch(typeof(ColonistBar))]
     [HarmonyPatch("CheckRecacheEntries")]
     public static class Patch_ColonistBar
@@ -24,7 +26,7 @@ namespace AnomalyPatch.DeadGhoulsInColonistBar
 
             foreach (CodeInstruction instruction in instructions)
             {
-                if (!foundIsColonist1 && instruction.opcode == OpCodes.Callvirt && (MethodInfo)instruction.operand == typeof(Pawn).Method("get_IsColonist"))
+                if (!foundIsColonist1 && instruction.opcode == OpCodes.Callvirt && (MethodInfo)instruction.operand == typeof(Pawn).PropertyGetter(nameof(Pawn.IsColonist)))
                 {
                     foundIsColonist1 = true;
                     continue;
@@ -39,7 +41,7 @@ namespace AnomalyPatch.DeadGhoulsInColonistBar
                     instruction.labels.Add(addCorpseLabel1);
                     addedLabel1 = true;
                 }
-                if (foundIsColonist1 && instruction.opcode == OpCodes.Callvirt && (MethodInfo)instruction.operand == typeof(Pawn).Method("get_IsColonist"))
+                if (foundIsColonist1 && instruction.opcode == OpCodes.Callvirt && (MethodInfo)instruction.operand == typeof(Pawn).PropertyGetter(nameof(Pawn.IsColonist)))
                 {
                     foundIsColonist2 = true;
                 }
@@ -60,7 +62,7 @@ namespace AnomalyPatch.DeadGhoulsInColonistBar
 
             foreach (CodeInstruction instruction in instructions)
             {
-                if (!foundIsColonist3 && instruction.opcode == OpCodes.Callvirt && (MethodInfo)instruction.operand == typeof(Pawn).Method("get_IsColonist"))
+                if (!foundIsColonist3 && instruction.opcode == OpCodes.Callvirt && (MethodInfo)instruction.operand == typeof(Pawn).PropertyGetter(nameof(Pawn.IsColonist)))
                 {
                     yield return instruction;
                     yield return new CodeInstruction(OpCodes.Brtrue_S, addCorpseLabel1);
@@ -70,18 +72,18 @@ namespace AnomalyPatch.DeadGhoulsInColonistBar
                     foundIsColonist3 = true;
                     continue;
                 }
-                if (foundIsColonist3 && !foundIsColonist4 && instruction.opcode == OpCodes.Callvirt && (MethodInfo)instruction.operand == typeof(Pawn).Method("get_IsColonist"))
+                if (foundIsColonist3 && !foundIsColonist4 && instruction.opcode == OpCodes.Callvirt && (MethodInfo)instruction.operand == typeof(Pawn).PropertyGetter(nameof(Pawn.IsColonist)))
                 {
                     yield return instruction;
                     yield return new CodeInstruction(OpCodes.Brtrue_S, addCorpseLabel2);
                     yield return new CodeInstruction(OpCodes.Ldloc_S, 7);
-                    yield return new CodeInstruction(OpCodes.Callvirt, typeof(Corpse).Method("get_InnerPawn"));
+                    yield return new CodeInstruction(OpCodes.Callvirt, typeof(Corpse).PropertyGetter(nameof(Corpse.InnerPawn)));
                     yield return new CodeInstruction(OpCodes.Call, typeof(PatchUtility_ColonistBar).Method(nameof(PatchUtility_ColonistBar.ShouldShowGhoul)));
                     yield return new CodeInstruction(OpCodes.Brtrue_S, addCorpseLabel2);
                     foundIsColonist4 = true;
                     continue;
                 }
-                if (instruction.opcode == OpCodes.Callvirt && instruction.operand is MethodInfo info && info == typeof(Pawn).Method("get_IsColonySubhumanPlayerControlled"))
+                if (instruction.opcode == OpCodes.Callvirt && instruction.operand is MethodInfo info && info == typeof(Pawn).PropertyGetter(nameof(Pawn.IsColonySubhumanPlayerControlled)))
                 {
                     instruction.operand = typeof(PatchUtility_ColonistBar).Method(nameof(PatchUtility_ColonistBar.ShouldShowGhoul));
                 }
@@ -95,7 +97,7 @@ namespace AnomalyPatch.DeadGhoulsInColonistBar
     {
         public static bool ShouldShowGhoul(Pawn p)
         {
-            return AnomalyPatchSettings.DeadGhoulsInColonistBar && p.IsColonySubhuman;
+            return Settings.DeadGhoulsInColonistBar.Enabled() && p.IsColonySubhuman;
         }
     }
 }

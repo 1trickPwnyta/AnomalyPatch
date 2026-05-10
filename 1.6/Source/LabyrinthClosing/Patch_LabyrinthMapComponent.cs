@@ -1,11 +1,13 @@
 ﻿using HarmonyLib;
 using RimWorld;
+using SpecialSauce.Multipatch;
 using System.Collections.Generic;
-using System.Reflection;
 using System.Reflection.Emit;
+using Verse;
 
 namespace AnomalyPatch.LabyrinthClosing
 {
+    [HarmonyPatch_Compatibility(SpecialMod_Multipatch_Anomaly.PACKAGE_ID, Settings.LabyrinthClosing)]
     [HarmonyPatch(typeof(LabyrinthMapComponent))]
     [HarmonyPatch("TeleportPawnsClosing")]
     public static class Patch_LabyrinthMapComponent_TeleportPawnsClosing
@@ -18,22 +20,30 @@ namespace AnomalyPatch.LabyrinthClosing
 
             foreach (CodeInstruction instruction in instructions)
             {
-                if (!foundThings && instruction.opcode == OpCodes.Ldfld && (FieldInfo)instruction.operand == AnomalyPatchRefs.f_Map_spawnedThings)
+                if (!foundThings && instruction.LoadsField(typeof(Map).Field(nameof(Map.spawnedThings))))
                 {
                     foundThings = true;
                 }
-                if (foundThings && !foundSkip && instruction.opcode == OpCodes.Call && (MethodInfo)instruction.operand == AnomalyPatchRefs.m_SkipUtility_SkipTo)
+                if (foundThings && !foundSkip && instruction.Calls(typeof(SkipUtility).Method(nameof(SkipUtility.SkipTo))))
                 {
                     foundSkip = true;
                 }
                 if (foundSkip && !finished && instruction.opcode == OpCodes.Pop)
                 {
-                    yield return new CodeInstruction(OpCodes.Call, AnomalyPatchRefs.m_LabyrinthUtility_ForbidIfOutsideHomeZone);
+                    yield return new CodeInstruction(OpCodes.Call, typeof(Patch_LabyrinthMapComponent_TeleportPawnsClosing).Method(nameof(ForbidIfOutsideHomeZone)));
                     finished = true;
                     continue;
                 }
 
                 yield return instruction;
+            }
+        }
+
+        private static void ForbidIfOutsideHomeZone(Thing thing)
+        {
+            if (Settings.LabyrinthClosing.Enabled())
+            {
+                thing.SetForbiddenIfOutsideHomeArea();
             }
         }
     }

@@ -1,5 +1,6 @@
 ﻿using HarmonyLib;
 using RimWorld;
+using SpecialSauce.Multipatch;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -8,13 +9,14 @@ using Verse;
 
 namespace AnomalyPatch.RitualDialogSorting
 {
+    [HarmonyPatch_Compatibility(SpecialMod_Multipatch_Anomaly.PACKAGE_ID, Settings.RitualDialogSorting)]
     [HarmonyPatch(typeof(PawnRoleSelectionWidgetBase<PsychicRitualRoleDef>))]
     [HarmonyPatch("DrawRoleGroup")]
     public static class Patch_PawnRoleSelectionWidgetBase_DrawRoleGroup
     {
         public static void Prefix(PawnRoleSelectionWidgetBase<PsychicRitualRoleDef> __instance, ref IEnumerable<Pawn> selectedPawns)
         {
-            if (AnomalyPatchSettings.RitualDialogSorting && __instance is PawnPsychicRitualRoleSelectionWidget)
+            if (Settings.RitualDialogSorting.Enabled() && __instance is PawnPsychicRitualRoleSelectionWidget)
             {
                 IOrderedEnumerable<Pawn> sortedPawns = selectedPawns.OrderByDescending(p => !p.Downed && p.IsFreeNonSlaveColonist);
                 Func<Pawn, object> sortFunc = RitualSortPropertyUtil.sortBy.GetSortFunc();
@@ -30,13 +32,14 @@ namespace AnomalyPatch.RitualDialogSorting
         }
     }
 
+    [HarmonyPatch_Compatibility(SpecialMod_Multipatch_Anomaly.PACKAGE_ID, Settings.RitualDialogSorting)]
     [HarmonyPatch(typeof(PawnRoleSelectionWidgetBase<PsychicRitualRoleDef>))]
     [HarmonyPatch(nameof(PawnRoleSelectionWidgetBase<PsychicRitualRoleDef>.DrawPawnList))]
     public static class Patch_PawnRoleSelectionWidgetBase_DrawPawnList
     {
         public static void Prefix(PawnRoleSelectionWidgetBase<PsychicRitualRoleDef> __instance, ref Rect listRectPawns)
         {
-            if (AnomalyPatchSettings.RitualDialogSorting && __instance is PawnPsychicRitualRoleSelectionWidget)
+            if (Settings.RitualDialogSorting.Enabled() && __instance is PawnPsychicRitualRoleSelectionWidget)
             {
                 float widgetHeight = 24f;
                 Rect labelRect = new Rect(listRectPawns.x, listRectPawns.y, listRectPawns.width * 2 / 10, widgetHeight);

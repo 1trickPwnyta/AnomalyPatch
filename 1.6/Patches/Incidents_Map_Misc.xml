@@ -1,9 +1,11 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <Patch>
-  <Operation Class="PatchOperationReplace">
+  <Operation Class="SpecialSauce.Multipatch.PatchOperationReplace_Compatibility">
     <xpath>/Defs/IncidentDef[defName="UnnaturalDarkness"]/workerClass</xpath>
     <value>
       <workerClass>AnomalyPatch.QuestIncidentMapFix.IncidentWorker_GiveQuest_Map</workerClass>
     </value>
+	<modId>1trickpwnyta.anomalypatch</modId>
+	<settingKey>QuestIncidentMapFix</settingKey>
   </Operation>
 </Patch>

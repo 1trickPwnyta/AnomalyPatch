@@ -6,7 +6,7 @@ namespace RimWorld
     {
         protected override bool CanFireNowSub(IncidentParms parms)
         {
-            return base.CanFireNowSub(parms) && (!AnomalyPatchSettings.DevourerWaterAssaultFix || PawnsArrivalModeDefOf.EmergeFromWater.Worker.TryResolveRaidSpawnCenter(parms));
+            return base.CanFireNowSub(parms) && (!Settings.DevourerWaterAssaultFix.Enabled() || PawnsArrivalModeDefOf.EmergeFromWater.Worker.TryResolveRaidSpawnCenter(parms));
         }
     }
 }

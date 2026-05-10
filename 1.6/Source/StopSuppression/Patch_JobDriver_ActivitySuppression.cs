@@ -1,12 +1,12 @@
 ﻿using HarmonyLib;
 using RimWorld;
 using System.Collections.Generic;
-using System.Reflection;
 using System.Reflection.Emit;
+using Verse;
 
 namespace AnomalyPatch.StopSuppression
 {
-    // Patched manually in mod constructor
+    // Patched manually in mod initializer
     public static class Patch_JobDriver_ActivitySuppression
     {
         public static IEnumerable<CodeInstruction> Transpiler(IEnumerable<CodeInstruction> instructions, ILGenerator il)
@@ -17,17 +17,17 @@ namespace AnomalyPatch.StopSuppression
 
             foreach (CodeInstruction instruction in instructions)
             {
-                if (instruction.opcode == OpCodes.Call && (MethodInfo)instruction.operand == AnomalyPatchRefs.m_ThingCompUtility_TryGetComp)
+                if (instruction.Calls(typeof(ThingCompUtility).Method(nameof(ThingCompUtility.TryGetComp), new[] { typeof(Thing) }, new[] { typeof(CompActivity) })))
                 {
                     yield return instruction;
                     yield return new CodeInstruction(OpCodes.Dup);
                     yield return new CodeInstruction(OpCodes.Stloc_S, compActivity);
                     continue;
                 }
-                if (instruction.opcode == OpCodes.Callvirt && (MethodInfo)instruction.operand == AnomalyPatchRefs.m_CompActivity_get_ActivityLevel)
+                if (instruction.Calls(typeof(CompActivity).PropertyGetter(nameof(CompActivity.ActivityLevel))))
                 {
                     yield return new CodeInstruction(OpCodes.Pop);
-                    yield return new CodeInstruction(OpCodes.Ldsfld, AnomalyPatchRefs.f_AnomalyPatch_Settings_StopSuppression);
+                    yield return new CodeInstruction(OpCodes.Call, typeof(Patch_JobDriver_ActivitySuppression).PropertyGetter(nameof(StopSuppressionEnabled)));
                     yield return new CodeInstruction(OpCodes.Brtrue, postActivityLevelCheckLabel);
                     yield return new CodeInstruction(OpCodes.Ldloc_S, compActivity);
                 }
@@ -43,5 +43,7 @@ namespace AnomalyPatch.StopSuppression
                 yield return instruction;
             }
         }
+
+        private static bool StopSuppressionEnabled => Settings.StopSuppression.Enabled();
     }
 }

@@ -10,7 +10,7 @@ namespace AnomalyPatch.QuestIncidentMapFix
         {
             Slate slate = new Slate();
             slate.Set("points", parms.points);
-            if (AnomalyPatchSettings.QuestIncidentMapFix)
+            if (Settings.QuestIncidentMapFix.Enabled())
             {
                 slate.Set("map", (Map)parms.target);
             }

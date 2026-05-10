@@ -1,9 +1,11 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <Patch>
-  <Operation Class="PatchOperationReplace">
+  <Operation Class="SpecialSauce.Multipatch.PatchOperationReplace_Compatibility">
     <xpath>/Defs/IncidentDef[defName="DevourerWaterAssault"]/workerClass</xpath>
     <value>
       <workerClass>IncidentWorker_DevourerWaterAssaultFix</workerClass>
     </value>
+	<modId>1trickpwnyta.anomalypatch</modId>
+	<settingKey>DevourerWaterAssaultFix</settingKey>
   </Operation>
 </Patch>

@@ -1,11 +1,12 @@
 ﻿using HarmonyLib;
+using SpecialSauce.Multipatch;
 using System.Collections.Generic;
-using System.Reflection;
 using System.Reflection.Emit;
 using Verse;
 
 namespace AnomalyPatch.CharacterHighlighting
 {
+    [HarmonyPatch_Compatibility(SpecialMod_Multipatch_Anomaly.PACKAGE_ID, Settings.CharacterHighlighting)]
     [HarmonyPatch(typeof(SilhouetteUtility))]
     [HarmonyPatch("ShouldHighlightInt")]
     public static class Patch_SilhouetteUtility
@@ -14,9 +15,9 @@ namespace AnomalyPatch.CharacterHighlighting
         {
             foreach (CodeInstruction instruction in instructions)
             {
-                if (instruction.opcode == OpCodes.Call && (MethodInfo)instruction.operand == AnomalyPatchRefs.m_ModsConfig_get_AnomalyActive)
+                if (instruction.Calls(typeof(ModsConfig).PropertyGetter(nameof(ModsConfig.AnomalyActive))))
                 {
-                    CodeInstruction newInstruction = new CodeInstruction(OpCodes.Ldsfld, AnomalyPatchRefs.f_AnomalyPatchSettings_CharacterHighlighting);
+                    CodeInstruction newInstruction = new CodeInstruction(OpCodes.Call, typeof(Patch_SilhouetteUtility).PropertyGetter(nameof(CharacterHighlightingEnabled)));
                     newInstruction.labels.AddRange(instruction.labels);
                     yield return newInstruction;
                     yield return new CodeInstruction(OpCodes.Ldc_I4_1);
@@ -27,5 +28,7 @@ namespace AnomalyPatch.CharacterHighlighting
                 yield return instruction;
             }
         }
+
+        private static bool CharacterHighlightingEnabled => Settings.CharacterHighlighting.Enabled();
     }
 }

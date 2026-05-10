@@ -1,14 +1,16 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <Patch>
-  <Operation Class="AnomalyPatch.PatchOperationReplaceIf">
+  <Operation Class="SpecialSauce.Patching.PatchOperationReplaceIfSettingEnabled">
     <xpath>/Defs/BackstoryDef[defName="UnknownAdulthood"]/bodyTypeFemale</xpath>
     <value>
       <bodyTypeFemale>Female</bodyTypeFemale>
     </value>
-	<setting>CreepjoinerBodyTypeFix</setting>
+	<modId>1trickpwnyta.anomalypatch</modId>
+	<settingKey>CreepjoinerBodyTypeFix</settingKey>
   </Operation>
-  <Operation Class="AnomalyPatch.PatchOperationRemoveIf">
+  <Operation Class="SpecialSauce.Patching.PatchOperationRemoveIfSettingEnabled">
     <xpath>/Defs/BackstoryDef[defName="UnknownAdulthood"]/bodyTypeGlobal</xpath>
-	<setting>CreepjoinerBodyTypeFix</setting>
+	<modId>1trickpwnyta.anomalypatch</modId>
+	<settingKey>CreepjoinerBodyTypeFix</settingKey>
   </Operation>
 </Patch>

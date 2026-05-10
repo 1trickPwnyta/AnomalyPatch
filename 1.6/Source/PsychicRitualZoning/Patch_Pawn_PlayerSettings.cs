@@ -1,13 +1,17 @@
 ﻿using HarmonyLib;
 using RimWorld;
+using SpecialSauce.Multipatch;
 using System.Collections.Generic;
-using System.Reflection;
 using System.Reflection.Emit;
+using Verse;
+using Verse.AI.Group;
 
 namespace AnomalyPatch.PsychicRitualZoning
 {
+    [HarmonyPatch_Compatibility(SpecialMod_Multipatch_Anomaly.PACKAGE_ID, Settings.PsychicRitualZoning)]
     [HarmonyPatch(typeof(Pawn_PlayerSettings))]
-    [HarmonyPatch("get_RespectsAllowedArea")]
+    [HarmonyPatch(nameof(Pawn_PlayerSettings.RespectsAllowedArea))]
+    [HarmonyPatch(MethodType.Getter)]
     public static class Patch_Pawn_PlayerSettings
     {
         public static IEnumerable<CodeInstruction> Transpiler(IEnumerable<CodeInstruction> instructions)
@@ -17,7 +21,7 @@ namespace AnomalyPatch.PsychicRitualZoning
 
             foreach (CodeInstruction instruction in instructions)
             {
-                if (!foundLord && instruction.opcode == OpCodes.Call && (MethodInfo)instruction.operand == AnomalyPatchRefs.m_LordUtility_GetLord)
+                if (!foundLord && instruction.Calls(typeof(LordUtility).Method(nameof(LordUtility.GetLord), new[] { typeof(Pawn) })))
                 {
                     foundLord = true;
                 }
@@ -25,9 +29,9 @@ namespace AnomalyPatch.PsychicRitualZoning
                 {
                     yield return instruction;
                     yield return new CodeInstruction(OpCodes.Ldarg_0);
-                    yield return new CodeInstruction(OpCodes.Ldfld, AnomalyPatchRefs.f_Pawn_PlayerSettings_pawn);
-                    yield return new CodeInstruction(OpCodes.Call, AnomalyPatchRefs.m_LordUtility_GetLord);
-                    yield return new CodeInstruction(OpCodes.Call, AnomalyPatchRefs.m_LordUtility_LordRespectsAllowedArea);
+                    yield return new CodeInstruction(OpCodes.Ldfld, typeof(Pawn_PlayerSettings).Field("pawn"));
+                    yield return new CodeInstruction(OpCodes.Call, typeof(LordUtility).Method(nameof(LordUtility.GetLord), new[] { typeof(Pawn) }));
+                    yield return new CodeInstruction(OpCodes.Call, typeof(Patch_Pawn_PlayerSettings).Method(nameof(LordRespectsAllowedArea)));
                     yield return new CodeInstruction(OpCodes.Brtrue_S, instruction.operand);
                     finished = true;
                     continue;
@@ -35,6 +39,11 @@ namespace AnomalyPatch.PsychicRitualZoning
 
                 yield return instruction;
             }
+        }
+
+        private static bool LordRespectsAllowedArea(Lord lord)
+        {
+            return Settings.PsychicRitualZoning.Enabled() && lord != null && lord.LordJob is LordJob_PsychicRitual;
         }
     }
 }

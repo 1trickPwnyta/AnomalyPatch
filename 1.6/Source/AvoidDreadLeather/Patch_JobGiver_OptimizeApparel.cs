@@ -1,5 +1,6 @@
 ﻿using HarmonyLib;
 using RimWorld;
+using SpecialSauce.Multipatch;
 using System.Collections.Generic;
 using System.Reflection;
 using System.Reflection.Emit;
@@ -7,6 +8,7 @@ using Verse;
 
 namespace AnomalyPatch.AvoidDreadLeather
 {
+    [HarmonyPatch_Compatibility(SpecialMod_Multipatch_Anomaly.PACKAGE_ID, Settings.AvoidDreadLeather)]
     [HarmonyPatch(typeof(JobGiver_OptimizeApparel))]
     [HarmonyPatch(nameof(JobGiver_OptimizeApparel.ApparelScoreRaw))]
     public static class Patch_JobGiver_OptimizeApparel
@@ -43,7 +45,7 @@ namespace AnomalyPatch.AvoidDreadLeather
     {
         public static void ModifyApparelScore(ref float score, Pawn pawn, Apparel ap)
         {
-            if (AnomalyPatchSettings.AvoidDreadLeather && ap.Stuff == ThingDefOf.Leather_Dread)
+            if (Settings.AvoidDreadLeather.Enabled() && ap.Stuff == ThingDefOf.Leather_Dread)
             {
                 if (pawn == null || ThoughtUtility.CanGetThought(pawn, DefDatabase<ThoughtDef>.GetNamed("WearingDreadLeather"), true))
                 {
