@@ -51,6 +51,7 @@
 ________________________________________________
 
 <size=18px><color=#5aa9d6>Updates</color></size>
+
 04/29/2026: Stop enabling bioferrite extraction by default once bioferrite harvester research is unlocked
 11/29/2025: Added option to enable bioferrite extraction by default on contained entities
 11/06/2025: Split doorway work option into two options: one for containment cells, one for prisons
@@ -68,6 +69,7 @@ ________________________________________________
 05/08/2024: Fixed world map bug when selecting any tile on starting world map screen, or selecting any tile while multiple bioferrite harvesters are selected
 
 <size=18px><color=#5aa9d6>Credits</color></size>
+
   &#8226; Mod icon: twitter.com/mouse_draws
 	]]></description>
 	<url>https://github.com/1trickPwnyta/AnomalyPatch</url>
