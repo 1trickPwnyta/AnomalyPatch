@@ -1,6 +1,7 @@
 ﻿using HarmonyLib;
 using RimWorld;
 using RimWorld.QuestGen;
+using SpecialSauce.ModSettings;
 using SpecialSauce.Multipatch;
 using System.Collections.Generic;
 using System.Linq;

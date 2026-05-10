@@ -1,6 +1,7 @@
 ﻿using RimWorld.QuestGen;
 using RimWorld;
 using Verse;
+using SpecialSauce.ModSettings;
 
 namespace AnomalyPatch.QuestIncidentMapFix
 {

@@ -108,7 +108,6 @@
     <Compile Include="StudyAndSuppressByDefault\Patch_CompActivity.cs" />
     <Compile Include="QuestIncidentMapFix\IncidentWorker_GiveQuest_Map.cs" />
     <Compile Include="QuestIncidentMapFix\Patch_QuestNode_Root_UnnaturalDarkness.cs" />
-    <Compile Include="Utility.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
